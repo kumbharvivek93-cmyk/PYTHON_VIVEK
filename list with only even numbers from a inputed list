@@ -1,0 +1,16 @@
+# list problems 
+#1 write a python function that takes a list of integers and returns a list with only even numbers
+
+l=[]
+print("** enter theree zeros continues to turmunate the list input process")
+while True:
+    a=int(input("enter numbers to append in the list ::"))
+    if a==000:
+        break
+    l.append(a)
+print(f'the original list is {l}')
+even_l=[]
+for i in l:
+    if i %2==0:
+        even_l.append(i)
+print(f'the list with even numbers only is {even_l}')

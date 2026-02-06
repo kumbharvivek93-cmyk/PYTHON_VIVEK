@@ -1,0 +1,8 @@
+l=[]
+for i in range(5):
+    a=int(input("enter a element to append in the list ::"))
+    l.append(a)
+print(f'original list is:: {l}') # this program takes a list form user you can customize the size of the ( midifing the range at line 2 list and takes only uniq elements in a new list 
+
+new_list=set(l)
+print(f'modified list is :: {new_list}')

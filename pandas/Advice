@@ -1,4 +1,4 @@
-while data clening with pandas we face a entry same in all col. but diff in one col. 
+1.while data clening with pandas we face a entry same in all col. but diff in one col. 
 when we tend to remove this by...
 
 df=pd.drop_duplicates()
@@ -10,3 +10,56 @@ but my telling pandas to considering only one col. such as email
 df=pd.drop_duplicates(subset-["Email"])
 
 then the duplicates items will be deleted      >>> thank you by vivek
+
+
+
+2.when we are completerly cleaned the csv file make sure we are seving the file by 
+
+df.to_csv("xyz",index=False)
+
+
+
+3.make sure we have to deal with the rupee sighn and doller sighn properly 
+
+
+4. dont think sintax wise and good looking and weak-harted ly if any data is not proper to machine leaning or not worthy 
+    or unfit to model training then eleminate it strictly 
+
+5. CODE EXAMPLE  :
+
+#  DATA CLEANING FINAL BOSS
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_csv("/home/vivek2006/Desktop/python/ecommerce_verydirty_csv_filanboss.csv")
+df.columns=["Name","Email","Age","Gender","Order_date","sighnup_date","Product","Quantity","Price","Neatprice","Total","Country","Status","Note"]
+df=df.drop_duplicates(subset=["Email"])
+df["Note"]=df["Note"].fillna("Empty")
+df["Note"]=df["Note"].astype("string")
+df["Note"]=df["Note"].str.strip().str.capitalize()
+df["Country"]=df["Country"].str.strip().str.capitalize()
+df["Country"]=df["Country"].replace({"india":"India","paid":"India","Paid":"India","Failed":'India',"In":'India'})
+df["Country"]=df["Country"].fillna("India")
+df["Country"]=df["Country"].str.strip().str.capitalize()
+df.to_csv("/home/vivek2006/Desktop/python/ecommerce_verydirty_csv_filanboss.csv",index=False)
+df["Total"]=pd.to_numeric(df["Total"],errors="coerce")
+df["Quantity"]=pd.to_numeric(df["Quantity"],errors="coerce")
+df["Price"]=pd.to_numeric(df["Price"],errors="coerce")
+
+df["Total"]=df["Total"].fillna(df["Quantity"]*df["Price"])
+df["Product"]=df["Product"].astype("string")
+df["Product"]=df["Product"].str.strip().str.capitalize()
+# df["sighnup_date"]=pd.to_datetime(df["sighnup_date"],dayfirst=False,errors="coerce")
+df["Order_date"]=pd.to_datetime(df["Order_date"],dayfirst=False,errors="coerce")
+df["Gender"]=df["Gender"].astype("string")
+df["Gender"]=df["Gender"].str.capitalize().str.strip()
+df["Gender"]=df["Gender"].replace({"M":"Male","F":"Female"})
+df["Age"]=pd.to_numeric(df["Age"],errors="coerce")
+df["Age"]=df["Age"].fillna(df["Age"].mean(numeric_only=True))
+df["Email"]=df["Email"].str.strip()
+df["Name"]=df["Name"].str.strip().str.capitalize()
+
+
+
+
+print(df.to_string())
+

@@ -1,0 +1,14 @@
+import requests
+a=input("enter name of pokemon to find its data/ information")
+url="https://pokeapi.co/api/v2/pokemon/"
+
+try:
+    res=requests.get(url+a)
+    data=res.json()
+    print(data["stats"])
+    print(data["height"])
+    
+except KeyError:
+    print(f'error : {res.status_code()}')
+for s in data["stats"]:
+    print(s["stat"]["name"], ":", s["base_stat"])

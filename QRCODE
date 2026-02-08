@@ -1,0 +1,19 @@
+TO MAKE A QR CODE OF OUR OWN URL 
+
+STEPS:
+
+FIRST INSTALL qrcode module
+
+>>> pip install qrcode[pil]
+i am installing the pillow additional dependency for more functions and operation
+
+SECOND TAKE THE URL AS UNPUT OR YOU CAN JUST WRITE IT 
+
+>>> url=input("enter the url of which you wonted to make a QR code ")
+
+THIRD GIVE A FILE PATH OF WHERE WE WONT TO SAVE THE QR CODE AS PNG
+
+>>> file_path="/home/vivek2006/Desktop/qrcode/qrcode.png"
+
+FOURTH 
+

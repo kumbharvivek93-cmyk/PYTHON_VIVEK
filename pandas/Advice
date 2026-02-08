@@ -1,0 +1,12 @@
+while data clening with pandas we face a entry same in all col. but diff in one col. 
+when we tend to remove this by...
+
+df=pd.drop_duplicates()
+
+then pandas check for all col. not only single one thus it not get removed 
+
+but my telling pandas to considering only one col. such as email 
+
+df=pd.drop_duplicates(subset-["Email"])
+
+then the duplicates items will be deleted      >>> thank you by vivek

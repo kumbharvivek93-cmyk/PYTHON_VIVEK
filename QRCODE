@@ -15,5 +15,21 @@ THIRD GIVE A FILE PATH OF WHERE WE WONT TO SAVE THE QR CODE AS PNG
 
 >>> file_path="/home/vivek2006/Desktop/qrcode/qrcode.png"
 
-FOURTH 
+FOURTH MAKE A QR OBJECT USING THE QRCODE() CONSTRUCTOR
+
+>>> qr=qrcode.QRCode()
+
+FIFTH PASS THE URL IN THE QR OBJECT
+
+  >>>   qr.add_data(url)
+SIXTH CREATE A IMAGE OBJECT WITH THE HELP OF QR OBJECT AND MAKE_IMAGE METHOD
+
+>>> img=qr.make_image()
+
+SEVENTH SAVE THE IMAGE OR PNG OF QRCODE ON THE DIRECTED FILE PATH TAKE AT BEGINING
+
+>>>img.save(file_path)
+
+FINAL FUN TIME OR INDICATOR
+>>>print("qrcode generated buddy")
 

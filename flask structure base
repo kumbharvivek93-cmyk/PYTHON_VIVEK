@@ -1,0 +1,24 @@
+BASIC STRUCTURE OF THE FLASK FRAMEWORK FIRST PROGRAM 
+
+FIRST IMPORT FLASK
+
+>>> from flask import Flask
+
+THEN MAK3E A OBJECT NAMED APP OF FLASK CLASS WITH __NAME__ ARRGUMENT
+
+>>> app=Flask(__name__)
+
+3RD MAKE A PATH TO HOME PAGE AS 
+
+>>> @app route("/")
+
+4TH MAKE HOME PAGE WITH THE HOME FUNCTION AND RUTURN WHAT DO YOU WOINT SUCH AS HTML FILE OR ANYTHING
+>>>def home():
+     return "how are you user"
+5TH RUN THE APP/WEBSIE
+
+>>> if __name__=="__main__":
+        app.run()
+
+
+# this is all

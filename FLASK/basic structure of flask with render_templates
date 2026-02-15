@@ -1,0 +1,22 @@
+from flask import Flask,render_template,url_for,redirect
+a=True
+b=int(input("enter 1 if you are student"))
+app=Flask(__name__)
+if b==1:
+    a=False
+else :
+    a=True
+@app.route("/")
+def home():
+    return "how are you user"
+@app.route("/project")
+def project():
+    return render_template("index.html")
+@app.route("/admin")
+def admin():
+    if a :
+        return redirect(url_for("index.html"))
+    print("how are you vivek admin !")
+
+if __name__=="__main__":
+    app.run()

@@ -1,0 +1,18 @@
+we now are familiar with the bootstrap so one best website that we shoud use all the time for bootstriping is 
+
+::getbootstrap.com
+
+this is best and though efficiant
+
+so make one base template and so many child templates that you require for you website or webapp 
+in the same templates folder
+
+add each child template the bootstape formate 
+
+and now  in main base.html template add bootstrap of css and js many things such as nowbar ,footbar,searchbra etc.
+so that each template can inherite them 
+
+also many more things we can get on tha (getbootstrap.com)
+
+
+thank you champ and ~~~~~ love from spyder ai-dev (viveksir)

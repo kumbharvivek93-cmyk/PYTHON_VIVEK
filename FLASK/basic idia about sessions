@@ -27,3 +27,7 @@ safe way by requests.form.get(")
 if "key" in session:
 data=session["key"]
 return "data"
+
+
+4. always give a secret key while using the sessions other wise they would crash 
+i.e.  app.secret_key="vivekkali"

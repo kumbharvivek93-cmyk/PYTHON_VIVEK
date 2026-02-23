@@ -7,4 +7,23 @@ though they are temprory means when we exit from web app or restat divice or app
 
 basically sessions is a way to remembring the information about user between http requests !! 
 
-~ by vivek aidev
+
+
+THINGS TO REMEMBER WHEN USING THE SESSIONS
+
+so the sessions strores the information between http requests  :
+
+1.make sure we allowed the http methods in the functions rute 
+
+2. always go with 
+
+ user=requests.form.get("key_from_html_input)
+session["key"]=user
+
+safe way by requests.form.get(")
+
+3.second step checkup
+
+if "key" in session:
+data=session["key"]
+return "data"

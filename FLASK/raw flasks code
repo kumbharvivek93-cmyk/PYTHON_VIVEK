@@ -1,0 +1,458 @@
+# # # from flask import Flask , render_template , redirect, for_url
+# # # app=Flask(__name__)
+# # # student=True
+
+# # # a=int(input("if you are student then enter 1 if you are not student then type 0"))
+# # # if a==1:
+
+# # # @app.route("/")
+# # # def home():
+# # #     return "<h2>how are you user i wont to welcome you buddy"
+
+# # # def project():
+# # #     if student:
+# # #         return render_template("index.html")
+
+
+
+# # # if __name__=="__main__":
+# # #     app.run()
+
+
+# # # from flask import Flask,render_template,url_for,redirect
+
+# # # app=Flask(__name__)
+
+# # # @app.route("/")
+# # # def home():
+# # #     return "how are you user"
+# # # @app.route("/project")
+# # # def project():
+# # #     return render_template("index.html")
+# # # @app.route("/admin")
+# # # def admin():
+# # #     print("how are you vivek admin !")
+# # #     return redirect(url_for("project"))
+# # #     # print("how are you vivek admin !")
+
+# # # if __name__=="__main__":
+# # #     app.run()
+
+# # #  tamplates
+
+# # # from flask import Flask, url_for,redirect,render_template
+# # # app=Flask(__name__)
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("index.html",context="master vivek kumbhar")
+
+# # # if __name__=="__main__":
+# # #     app.run()
+
+# # # from flask import Flask , redirect,render_template,url_for
+# # # app=Flask(__name__)
+
+
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("index.html")
+
+# # # if __name__=="__main__":
+# # #     app.run()
+
+
+# # # from flask import Flask , render_template, redirect , url_for
+# # # app=Flask(__name__)
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("wellcome.html")
+# # # @app.route("/user")
+# # # def user():
+# # #     return render_template("user.html")
+# # # @app.route("/project")
+# # # def project():
+# # #     return render_template("project.html")
+
+# # # if __name__=="__main__":
+# # #     app.run()
+
+
+# # # dynamic information 
+
+# # # from flask import Flask , render_template, redirect,url_for
+# # # app=Flask(__name__)
+
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("vivek.html",contents=["vivek","rama","omkar","yash"])
+
+
+# # # if __name__=="__main__":
+# # #     app.run()
+
+# # # from flask import Flask,render_template
+
+# # # app=Flask(__name__)
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("vivek.html",contents=["omkar","dadaso","kumbhar"])
+
+
+# # # if __name__=="__main__":
+# # #     app.run(debug=True)
+
+# # # lect three template inheritance and boot striping 
+
+# # # from flask import Flask,redirect,url_for,render_template
+# # # app=Flask(__name__)
+# # # @app.route("/")    # we have to add the bootstrap to base website (novbar footbar and some common buttons etc)
+# # # def home():
+# # #     return render_template("lect3practice.html")
+
+
+# # # if __name__=="__main__":
+# # #     app.run(debug=True)
+
+# # # from flask import Flask ,render_template
+# # # app=Flask(__name__)
+
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("lect3practice.html")
+
+# # # if __name__=="__main__":
+# # #     app.run(debug=True)
+
+# # # from flask import Flask,redirect,render_template,url_for
+# # # app=Flask(__name__)
+# # # flag=False
+# # # admin_list=[100,10,101,102,105]
+# # # a=input("if you are admin then type (yes) : ")
+# # # if a=="yes" or a=="Yes":
+# # #     b=int(input("enter you admin id ::"))
+# # #     for i in admin_list:
+# # #         if b==i:
+# # #             flag=True
+
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("lect3parctice.html")
+
+# # # @app.route("/project")
+# # # def project():
+# # #     if flag==False:
+# # #         return redirect(url_for("home"))
+# # #     return render_template("index.html")
+
+# # # if __name__=="__main__":
+# # #     app.run(debug=True)
+
+
+# # # from flask import Flask,request,render_template,redirect,url_for
+# # # app=Flask(__name__)
+# # # @app.route("/")
+# # # def home():
+# # #     return "<h1>hellow uer how are you </h1>"
+# # # @app.route("/login")
+# # # def login():
+# # #     return render_template("index.html")
+
+# # # if __name__=="__main__":
+# # #     app.run(debug=True)
+
+# # #  template inheritance
+# # # from flask import Flask,render_template,request
+# # # app=Flask(__name__)
+
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("index.html")
+# # # @app.route("/project")
+# # # def project():
+# # #     return render_template("vivek.html")
+
+# # # if __name__=="__main__":
+# # #     app.run(debug=True)
+
+# # # from flask import Flask , render_template
+# # # app=Flask(__name__)
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("index.html")
+# # # if __name__=="__main__":
+# # #     app.run(debug=True)
+
+# # # from flask import Flask,render_template,redirect,url_for,request
+# # # app=Flask(__name__)
+
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("index.html")
+# # # @app.route("/login",methods=["GET","POST"])
+# # # def login():
+# # #     if request.method=="POST":
+# # #         user=request.form["nm"]
+# # #         return redirect(url_for("user",usr=user))
+
+# # # #     else :
+# # # #         return render_template("login.html")
+# # # # @app.route("/<usr>")
+# # # # def user(usr):
+# # # #     return f'welcome {user} from Facebook '
+        
+    
+    
+    
+
+# # # # if __name__=="__main__":
+# # # #     app.run(debug=True)
+
+# # # # from flask import Flask, request, render_template, session, redirect, url_for
+
+# # # # app = Flask(__name__)
+# # # # app.secret_key = "vivek@123"
+
+
+# # # # @app.route("/")
+# # # # def home():
+# # # #     return render_template("index.html")
+
+
+# # # # @app.route("/login.html", methods=["GET", "POST"])
+# # # # def login():
+# # # #     if request.method == "POST":
+# # # # #         password = request.form.get("pass")  # SAFE ACCESS
+
+# # # # #         if password:
+# # # # #             session["userpass"] = password
+# # # # #             return redirect(url_for("user"))  # Go to /pass automatically
+# # # # #         else:
+# # # # #             return "Password not received!"
+
+# # # # #     return render_template("login.html")
+
+
+# # # # # @app.route("/pass")
+# # # # # def user():
+# # # # #     final_pass = session.get("userpass")
+
+# # # # #     if final_pass:
+# # # # #         return f"Password is {final_pass}"
+# # # # #     else:
+# # # # #         return "No password stored. Please login first."
+
+
+# # # # # @app.route("/logout")
+# # # # # def logout():
+# # # # #     session.pop("userpass", None)
+# # # # #     return "Logged out successfully!"
+
+
+# # # # # if __name__ == "__main__":
+# # # # #     app.run(debug=True)
+
+# # # # # # from flask import Flask,render_template,redirect,url_for
+# # # # # # app=Flask(__name__)
+# # # # # # # @app.route("/")
+# # # # # # # def home():
+# # # # # # #     return render_template("login.html")
+
+# # # # # # # if __name__=="__main__":
+# # # # # # #     app.run(debug=True)
+
+# # # # # from flask import Flask, redirect, request, url_for, render_template
+
+# # # # # app = Flask(__name__)
+
+# # # # # @app.route("/")
+# # # # # def home():
+# # # # #     return render_template("index.html")
+
+# # # # # @app.route("/login", methods=["GET", "POST"])
+# # # # # def login():
+# # # # #     if request.method == "POST":
+# # # # #         password = request.form["pass"]   # get form data
+# # # # #         return redirect(url_for("user", usr=password))
+# # # # #     else:
+# # # # #         return render_template("index.html")
+
+# # # # # @app.route("/<usr>")
+# # # # # def user(usr):
+# # # # #     return f'your password is {usr}'
+
+# # # # # if __name__ == "__main__":
+# # # # #     app.run(debug=True)
+
+# # # from flask import Flask ,render_template,redirect,url_for,request,session
+# # # app=Flask(__name__)
+# # # app.secret_key="vivek_kali"
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("index.html")
+# # # @app.route("/login",methods=["GET","POST"])
+# # # def login():
+# # #     if request.method=="POST":
+# # #         user=request.form["username"]
+# # #         session["username"]=user
+# # #         password=request.form["password"]
+# # #         session["password"]=password
+        
+# # #         return redirect(url_for("user"))
+# # #     else:
+# # #         return render_template("login.html")
+    
+
+# # # @app.route("/steal")
+# # # def user():
+# # #     name=session["username"]
+# # #     password=session["username"]
+
+# # #     return f"username is {name} and password is {password}"
+    
+
+
+# # # if __name__=="__main__":
+# # #     app.run(debug=True)
+
+# # # from flask import Flask,render_template,redirect,url_for ,session,request
+# # # app=Flask(__name__)
+# # # app.secret_key="vivekkali"
+# # # @app.route("/")
+# # # def home():
+# # #     return render_template("index.html")
+
+# # # @app.route("/login",methods=["GET","POST"])
+# # # def login():
+# # #     if request.method=="POST":
+# # #         password=request.form.get("password")
+# # #         session["password"]=password
+# # #         return" login successfully"
+# # #     else:
+# # #         if "password" in session:  # if we have sighned in then move to home page instead of logging in 
+# # #             return redirect(url_for("home"))  # when redirecting always use the functins name instead of templates name
+# # #         return render_template("login.html")
+# # # @app.route("/data")
+# # # def data():
+# # #     if "password" in session:
+# # #         data=session["password"]
+# # #     return f'the password is {data}'
+# # # @app.route("/logout")
+# # # def logout():
+# # #     session.pop("password",None)
+# # #     return redirect(url_for("login"))
+
+
+
+# # # if __name__=="__main__":
+# # #     app.run(debug=True)
+
+# # from flask import Flask,render_template,redirect,url_for,request,session
+# # from datetime import timedelta
+# # app=Flask(__name__)
+# # app.secret_key="vivekkali"
+# # app.permanent_session_lifetime=timedelta(days=2)
+# # @app.route("/")
+# # def home():
+# #     return render_template("index.html")
+# # @app.route("/login",methods=["GET","POST"])
+# # def login():
+# #     session.permanent=True
+# #     if request.method=="POST":
+# #         password=request.form.get("password")
+# #         session["password"]=password
+# #         return "<h3> login successful</h3>"
+# #     else:
+# #         if "password" in session:
+# #             return redirect(url_for("home"))
+# #         return render_template("login.html")
+            
+    
+# # @app.route("/data") 
+# # def user():
+# #     if "password" in session:
+# #         final_password=session["password"]
+# #         return f"password is {final_password}"
+# #     else:
+# #         return render_template("index.html")
+    
+# # @app.route("/logout")
+# # def logout():
+# #     session.pop("password",None)
+# #     return redirect(url_for("login"))
+    
+
+# # if __name__=="__main__":
+# #     app.run(debug=True)
+
+# from flask import Flask,render_template ,redirect,url_for,request,session,flash
+# from datetime import timedelta
+# app=Flask(__name__)
+# app.secret_key="vivekkali"
+# app.permanent_session_lifetime=timedelta(days=5)
+# @app.route("/")
+# def home():
+#     flash("logged in successful !!")
+#     return render_template("index.html")
+# @app.route("/login",methods=["GET","POST"])
+# def login():
+#     session.permanent=True
+#     if request.method=="POST":
+#         name=request.form.get("username")
+#         session["name"]=name
+#         flash("logged in successfully !!")
+#         return redirect(url_for("user"))
+    
+    
+#     else :
+#         if "name" in session:
+#             return render_template("index.html")
+#         return render_template("login.html")
+        
+# @app.route("/user")
+# def user():
+#     final_name=session["name"]
+#     if "name" in session:
+#         return f'heyyy {final_name}'
+
+    
+# @app.route("/logout",methods=["GET","POST"]) 
+# def logout():
+#     if request.method== "POST":
+#         res=request.form.get("confirm_logout")
+#         if res == "yes":
+#             session.pop("username",None)
+#             session.pop("password",None)
+#             return "logged-out successfully !!"
+#     else:
+#         return redirect(url_for("home"))
+#     return render_template("logout.html")
+
+
+
+
+
+# if __name__=="__main__":
+#     app.run(debug=True)
+
+from flask import Flask,render_template,redirect,url_for,session,flash,request
+from flask_sqlalchemy import SQLAlchemy
+from datetime import timedelta
+app=Flask(__name__)
+app.secret_key="vivekkali"
+app.permanent_session_lifetime= timedelta(minutes=2)
+
+@app.route("/",methods=["GET","POST"])
+def home():
+    if request.method=="POST":
+        email=request.form.get("email")
+        session["email"]=email
+        flash("email saved successfully !!")
+        return render_template("index.html")
+    else:
+        return render_template("general_login.html")
+    
+    
+
+if __name__=="__main__":
+    app.run(debug=True)
+            

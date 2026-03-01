@@ -73,5 +73,12 @@ flash_backend
 
 last but not the least # always go for redirect url for all the time because the render_templates dose not work proper
 with flash
+---------------------------------------------------------------------------------------------------------------------------
+to use flashe notifications we have to know that 
+
+1/flash messages only works with html templates
+2/to use flash messages we must have flash backend code in the html templates
+
+
 
 ~ by vivek sir aidev  ......love you all

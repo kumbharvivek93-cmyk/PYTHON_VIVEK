@@ -1,0 +1,25 @@
+SO BASICALLY SOME OF OUR FRINDS ARE WELL KNOWN ABOUT THE SQL BUT SOME MIGHT NOT 
+
+so sqlalchemy is the ORM ( object relational mapper) 
+
+>>>📌 What Is SQLAlchemy?
+
+SQLAlchemy is:
+
+👉 A Python library
+👉 That helps Python talk to a database
+👉 Without writing raw SQL every time
+
+It sits between:
+
+Python App  →  SQLAlchemy  →  DBMS
+
+in which we  1. clsss is table 
+to declare columns we follow 
+
+col_name=db.Column(db.dtype ,constrains)
+col_name=db.Column(db.dtype ,constrains)
+col_name=db.Column(db.dtype ,constrains)
+
+-------------------------------------------------------------------------------------------------------------
+TO USE SQLALCHEMY WE HAVE TO FOLLOW SOME STAPES THAT ARE ::

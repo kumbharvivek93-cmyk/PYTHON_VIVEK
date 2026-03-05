@@ -82,7 +82,7 @@ def login():
 @app.route("/user")
 def user():
     email=session["email"]
-    return f'email of user is {email}'
+    return f'email of user is {email}'     ~VIVEK SIR AIDEV   LOVE YOU ALL
 
 
 if __name__=="__main__":

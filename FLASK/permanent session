@@ -7,7 +7,7 @@ STEP 2 : make a instanse of the permant sesion or we can say that set up time to
 
 app.permanent_session_lifetime=timedelta(days=n)  # we can also pass mints= of hours= like that
 
-STEP 3 :  meke true session.permanent=True in the file / site / function in which we are assighning the session
+STEP 3 :  make true session.permanent=True in the file / site / function in which we are assighning the session
 
 code example :;
 

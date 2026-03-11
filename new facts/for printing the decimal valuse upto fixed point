@@ -1,0 +1,6 @@
+for print the decimal valuse up to the fixed pints 
+we use the round() function wiht print function eg..
+
+print(round(df["Age"].mean(numeric_only=True),3))   # ,n for the dicimal points
+
+this line will give the ans upto theree dicimal points 

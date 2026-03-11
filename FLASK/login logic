@@ -1,0 +1,19 @@
+@app.route("/login",methods=["GET","POST"]
+deg login():
+  session.permenent=True
+  if requser.method=="POST":
+    name=requset.form.get("name")
+    email=request.form.get("email")
+    user=User.query.filter_by(email=email).first()
+    if user and user.email==email:
+      flash("logged in successful")
+      return render_template("hoem.html")
+    else:
+      flash("incorrect email or name or password")
+      return render_template("login.html")
+  else ;
+    if "email" in session ;
+      return redire(url_for("home"))
+    else:
+      return render_template("login.html")
+

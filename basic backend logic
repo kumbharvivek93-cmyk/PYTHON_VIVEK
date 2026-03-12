@@ -1,0 +1,22 @@
+@app.route("/login",methods=["GET","POST"])
+def login():
+
+    if request.method=="POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        user = User.query.filter_by(email=email).first()    # checking from database  !!
+
+        if user and user.password == password:
+            session["email"] = user.email
+            session["name"] = user.name
+            return redirect(url_for("home"))
+        else:
+            flash("Invalid email or password")
+            return redirect(url_for("login"))
+
+    else:
+        if "email" in session:
+            return redirect(url_for("home"))
+        else:
+            return render_template("login.html")

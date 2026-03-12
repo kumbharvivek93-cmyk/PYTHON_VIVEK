@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block tile %} USERS {% endblock %}
+{% block content %}
+<P> DATABASE MANAGED BY SPYDER AIDEV</P>
+{% for usr in users %}
+    name of user: {{ usr.name }} <br>
+    email of user: {{usr.email}} <br>
+    <br>
+{% endfor%}
+{% endblock %}   
+
+
+this only works with the flask and is super convinient and good 
+
+we must have same blocks in our base.html file   ~by vivek sir aidev   ->love you all 

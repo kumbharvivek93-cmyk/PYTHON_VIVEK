@@ -3,3 +3,56 @@ understand everyting from the ground level all the things like bootstraping and 
 also the backend functioning and routhing and core logic thats it   
 
 everything i am able to do from my self   ~ spyder aidev love you all 
+
+
+
+
+from flask import Flask ,redirect,render_template,url_for,session,flash,request
+from datetime import timedelta
+from flask_sqlalchemy import SQLAlchemy
+
+app=Flask(__name__)
+app.secret_key="vivekkali"
+app.permanent_session_lifetime=timedelta(minutes=60)
+app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///User.sqlite3'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+db=SQLAlchemy(app)
+
+class User(db.Model):
+    name=db.Column(db.String(30))
+    mobile_no=db.Column(db.String(13),primary_key=True)
+
+    def __init__(self,name,mobile_no):
+        self.name=name  
+        self.mobile_no=mobile_no
+
+@app.route("/",methods=["GET","POST"])
+def login():
+    session.permanent=True
+    if request.method=="POST":
+        name=request.form.get("name")
+        mobile_no=request.form.get("mobile_no")
+        
+        if len(mobile_no)==10:
+            new_user=User(
+            name=name,
+            mobile_no=mobile_no
+            )
+            db.session.add(new_user)
+            db.session.commit()
+            return "<h2> logged in thank you user</h2>"
+        else:
+            flash("worng mobile_no")
+            return render_template("login.html")
+    else:
+        if "name" not in session:
+            return render_template("login.html")
+        
+        else:
+            return render_template("login.html")
+
+
+if __name__=="__main__":
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)

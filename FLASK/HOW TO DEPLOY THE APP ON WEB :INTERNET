@@ -18,4 +18,8 @@ second app is for app object inside the flask structure or script )
 
 8. boom we are done !!!! 
 
-we have put are app online  
+we have put are app online   
+========================================================================================================================
+to see the data in the database kindly one the same database if you have many databases of same name then it mught be confusing at first 
+
+the same database is present in the same folder that of app by named instance

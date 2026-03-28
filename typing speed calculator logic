@@ -1,1 +1,59 @@
-hii
+from flask import Flask,flash,redirect,render_template,url_for,session,request
+from flask_sqlalchemy import SQLAlchemy
+from datetime import timedelta
+
+app=Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///vivek.sqlite3'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+app.secret_key='vivekkali'
+app.permanent_session_lifetime=timedelta(minutes=60)
+db=SQLAlchemy(app)
+
+class vivek(db.Model):
+    name=db.Column(db.String(30))
+    mobile=db.Column(db.String(13), primary_key=True)    
+    password=db.Column(db.String(15))
+
+    def __init__(self,name,mobile,password):
+        self.name=name
+        self.password=password
+        self.mobile=mobile
+
+with app.app_context():
+    db.create_all()
+
+@app.route("/")
+def home():
+    return render_template("home.html")
+   
+@app.route("/login"methods=["GET","POST"])
+def login():
+    session.permanent=True
+    if request.method=="POST":
+        name=request.form.get("name")
+        password=request.form.get("password") 
+
+        if not name or name.strip()=="":
+            return "invalid name "
+
+        if not password or password.strip()=="":
+            return "invalid password"
+       
+        session["name"]=name
+        session["password"]=password
+
+        try :
+            db.session.add(new_user)
+            db.session.commit()
+            print("user is added to database")
+        except Exception as e:
+            db.session.rollback()
+            print(e)
+    
+
+
+
+
+
+if __name__=="__main__":
+    app.run(debug=True)

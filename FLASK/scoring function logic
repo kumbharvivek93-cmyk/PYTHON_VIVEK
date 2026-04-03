@@ -1,0 +1,135 @@
+I WROTE THIS MUCH LINES OF CODE BUT THIS CODE IS INSUFFICIANT AND NOT USEFUL QUITE PERTICULAR SO THIS IS BECAUSE OF ABSENCE OF LOGIC
+
+def suggest_diet(hight,weight):
+    score=0
+    if 150<hight<160 :
+        score=50
+        if 30<weight<40:
+            score+=15
+        elif 41<weight<50:
+            score+=35
+        elif 50<weight<60:
+            score+=50
+        elif 60<weight<70:
+            score+=40
+        elif 70<weight<80:
+            score+=25
+        elif 80<weight<90:
+            score+=20
+        elif weight>90:
+            score+=10
+        elif weight<30:
+            score+=10
+
+    elif 160<hight<170 :
+        score=50
+        if 30<weight<40:
+            score+=10
+        elif 41<weight<50:
+            score+=30
+        elif 50<weight<60:
+            score+=40
+        elif 60<weight<70:
+            score+=50
+        elif 70<weight<80:
+            score+=30
+        elif 80<weight<90:
+            score+=20
+        elif weight>90:
+            score+=10
+        elif weight<30:
+            score+=10
+
+    elif 170<hight<180 :
+        score=50
+        if 30<weight<40:
+            score+=10
+        elif 41<weight<50:
+            score+=20
+        elif 50<weight<60:
+            score+=30
+        elif 60<weight<70:
+            score+=40
+        elif 70<weight<80:
+            score+=50
+        elif 80<weight<90:
+            score+=40
+        elif weight>90:
+            score+=10
+        elif weight<30:
+            score+=10
+
+    elif 180<hight<190 :
+        score=50
+        if 30<weight<40:
+            score+=10
+        elif 41<weight<50:
+            score+=10
+        elif 50<weight<60:
+            score+=20
+        elif 60<weight<70:
+            score+=30
+        elif 70<weight<80:
+            score+=40
+        elif 80<weight<90:
+            score+=50
+        elif weight>90 and weight<100:
+            score+=30
+        elif weight>100:
+            score+=10
+        elif weight<30:
+            score+=10
+
+    elif 122<hight<150 :
+
+        score=50
+        if 10<weight<20:
+            score+=10
+        elif 20<weight<30:
+            score+=20
+        elif 30<weight<35:
+            score+=35
+        elif 35<weight<40:
+            score+=40                  # there are so many bugs  fix range bug / input bug / score bug / casing   ~ spyder aidev love you all
+        elif 40<weight<50:
+            score+=50
+        elif 50<weight<60:
+            score+=45
+        elif weight>60 and weight>70:
+            score+=30
+        elif weight>70:
+            score+=10
+        elif weight<10:
+            score+=10
+
+    if score==50:
+        return "you are unfit"
+    elif 50<score<60:
+        return "you need to focus on your health"
+    elif 60<score<70:
+        return "keep focusking on your health bro!"
+    elif 70<score<80:
+        return "good do yoga and meditation"
+    elif 80<score<90:
+        return "you are one step far bro love you"
+    elif 90<score<100:
+        return "you are idelly fit bro !!"
+
+    else :
+        return"something went wrong / enter hight in cms and weight in kilograms"
+
+
+TAKE A LOOK AT THE CODE WITH THE LOGIC ONE
+
+def score_card(parameters used in fun):
+
+    # firt crieteria  ex weight
+
+    if 50< weight<70:
+        score+=30
+    else:
+        score+=max(0,30-abs(60-weight))
+    return score
+
+
+

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S diet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page">
+        <section class="hero card">
+            <div class="hero-copy">
+                <span class="app-name">S diet</span>
+                <h1>Fuel your body with the right calories, not guesswork.</h1>
+                <p class="subtitle">Add your body details, pick your goal, and get a practical calorie target with a diet suggestion that fits weight loss, maintenance, or muscle gain.</p>
+
+                <div class="hero-stats">
+                    <div class="stat-pill">
+                        <strong>Smart Target</strong>
+                        <span>Daily calorie estimate</span>
+                    </div>
+                    <div class="stat-pill">
+                        <strong>Diet Ideas</strong>
+                        <span>Meals based on your goal</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-panel">
+                <div class="metric-card">
+                    <span class="metric-label">Today's focus</span>
+                    <strong>Eat better. Move better.</strong>
+                    <p>Healthy progress starts with a realistic calorie plan and a routine you can actually follow.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <div class="card form-card">
+                <div class="section-head">
+                    <h2>Your Details</h2>
+                    <a class="secondary-btn" href="{{ url_for('history') }}">View History</a>
+                </div>
+
+                <form method="POST">
+                    <div class="grid">
+                        <label>
+                            Name
+                            <input type="text" name="name" placeholder="Your name" required>
+                        </label>
+
+                        <label>
+                            Age
+                            <input type="number" name="age" min="10" max="100" required>
+                        </label>
+
+                        <label>
+                            Gender
+                            <select name="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Height (cm)
+                            <input type="number" name="height" step="0.1" required>
+                        </label>
+
+                        <label>
+                            Weight (kg)
+                            <input type="number" name="weight" step="0.1" required>
+                        </label>
+
+                        <label>
+                            Activity Level
+                            <select name="activity_level" required>
+                                <option value="sedentary">Sedentary</option>
+                                <option value="light">Lightly Active</option>
+                                <option value="moderate">Moderately Active</option>
+                                <option value="active">Active</option>
+                                <option value="very_active">Very Active</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        Goal
+                        <select name="goal" required>
+                            <option value="lose">Lose Weight</option>
+                            <option value="maintain">Maintain Weight</option>
+                            <option value="gain">Gain Weight</option>
+                        </select>
+                    </label>
+
+                    <div class="actions">
+                        <button type="submit">Calculate Plan</button>
+                    </div>
+                </form>
+            </div>
+
+            {% if result %}
+            <div class="card result-card">
+                <span class="eyebrow">Your result</span>
+                <h2>Hello {{ result.name }}</h2>
+
+                <div class="result-highlights">
+                    <div class="highlight-box">
+                        <span>Daily Calories</span>
+                        <strong>{{ result.calories }} kcal</strong>
+                    </div>
+                    <div class="highlight-box">
+                        <span>BMI</span>
+                        <strong>{{ result.bmi }}</strong>
+                    </div>
+                    <div class="highlight-box">
+                        <span>Goal</span>
+                        <strong>{{ result.goal|title }}</strong>
+                    </div>
+                </div>
+
+                <h3>Suggested Diet</h3>
+                <ul class="diet-list">
+                    {% for item in result.diet_plan %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+            <div class="card result-card placeholder-card">
+                <span class="eyebrow">Ready when you are</span>
+                <h2>Your personalized plan will appear here</h2>
+                <p class="subtitle">Fill out the form to see your daily calories, BMI, and goal-based diet suggestions in one clean dashboard.</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <section class="card team-card">
+            <span class="eyebrow">Project By</span>
+            <h2>Made by our team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <strong>Vivek Kumbhar</strong>
+                    <span> ADMIN Spidey</span>
+                </div>
+                <div class="team-member">
+                    <strong>Yash Pansande</strong>
+                    <span> Contributor</span>
+                </div>
+                <div class="team-member">
+                    <strong>Yash Mohite</strong>
+                    <span> Contributor </span>
+                </div>
+                <div class="team-member">
+                    <strong>Rohan Namde</strong>
+                    <span>  Contributor</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

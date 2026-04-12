@@ -1,0 +1,76 @@
+from flask import Flask,flash,redirect,render_template,url_for,session,request
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+from datetime import timedelta
+from werkzeug.security import generate_password_hash,check_password_hash
+
+app=Flask(__name__)
+app.secret_key="vivekkali"
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///vivekkali.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+app.permanent_session_lifetime=timedelta(minutes=60)
+db=SQLAlchemy(app)
+
+class vivekkali(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    name=db.Column(db.String(50),nullabel=False)
+    email=db.Column(db.String(50),nullabel=False)
+    hashed_password=db.Column(db.String(200),nullabel=False)
+    created_at=db.Column(db.DateTime,default=datetime.utcnow,nullabel=False)
+
+    @property
+    def password_h(self):
+        raise AttributeError("something went wrong !!")
+    
+    @password_h.setter
+    def password(self,password):            # this is password hashing 
+        self.hashed_password=generate_password_hash(password)
+
+    def check_password(self,password):
+        return check_password_hash(self.hashed_password,password)
+
+class heal(db.Model):
+    no=db.Column(db.Integer,)
+    age=db.Column(db.Integer,nullabel=False)
+    hieht=db.Column(db.Integer,nullabel=False)
+    weight=db.Column(db.Integer,nullabel=False)
+    gender=db.Column(db.Integer,nullabel=False)
+
+with app.app_context():
+    db.create_all()
+
+def calculate_bmi(age,height,weight,gender):
+    height_m=height/100
+    bmi=weight/(height_m**2)
+    return bmi
+@app.route("/")
+def home():
+    return render_template("home.html")
+
+@app.route("/login")
+def login():
+    session.permanent=True
+    if request.method=="POST":
+        email=request.form.get("email")
+        password=request.form.get("password")
+
+        user=vivekkali.query.filter_by(email==email)
+
+        if user and user.password==password:
+            flash("logged in successfully !!")
+            return redirect(url_for("/calculate_bmi"))
+        else:
+            flash("user not found !!")
+            return redirect(url_for("login.html"))
+    else:
+        render_template("login.html")
+
+if __name__=="__main__":
+    app.run(debug=True)
+        
+
+    
+
+
+
+    

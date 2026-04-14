@@ -1,0 +1,59 @@
+pythons basic tips and some snipists 
+
+x = 10
+if x > 5:
+    print("A")
+elif x > 8:
+    print("B")
+else:
+    print("C")
+    
+print(10 / 3)   # 3.333...
+print(10 // 3)  # 3
+print(10 % 3)   # 1
+print(2 ** 3)   # 8
+
+for i in range(2):
+    for j in range(2):
+        print(i, j)
+        
+output is 
+00
+01
+10
+11
+
+a = [1, 2]
+b = a
+b.append(3)
+print(a)
+
+output is 1,2,3
+
+s = "hello"
+print(s[::-1])
+
+output is olleh
+
+
+🧩 How to Solve Snippets FAST
+
+👉 Use this 3-step method:
+
+STEP 1: Read carefully
+
+Don’t rush
+
+STEP 2: Dry run mentally
+
+Track variables
+
+STEP 3: Watch traps
+= vs ==
+Indentation
+range limits
+
+
+print("7"**3) -> 777
+
+print(10 //3 + 10 %3) -> 4 

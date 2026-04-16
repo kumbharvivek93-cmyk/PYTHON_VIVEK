@@ -1,0 +1,151 @@
+# l=[]
+# print("enter a l of ten elements !!")
+# for i in range(10):
+#     a=int(input("enter a number to append in the l:"))
+#     l.append(a)
+# print("the l is ::")
+# for i in l:
+#     print(i)
+# max=l[0]
+# for i in range(len(l)):
+#     if l[i]>max:
+#         max=l[i]
+        
+# print(f'the maximum number is {max}')
+# l.remove(max)
+# for i in range(len(l)):
+#     sec_max=l[0]
+#     if l[i]>sec_max:
+#         sec_max=l[i]
+# print(f"the second largest element is {sec_max}")
+# print("thank you ")
+
+# l=[]
+# for i in range(10):
+#     a=int(input("enter ten numbers ::"))  # we can sort the list using the list.sort() function in assending format 
+#     # always mind it , befor printing the second largest element we should do the set of list \
+#     l.append(a)
+   
+    
+# l=list(set(l))  # set distroyes the order so after this l=list(set(l)) then do the sort
+# l.sort()
+
+# print(f"second largest element is {l[-2]}") 
+
+# check the number is armstrong no or not 
+
+# a=int(input("enter a number to check wether it is armstrong or not !  ::"))
+# n=len(str(a))
+# original=a
+# result=0
+# while a>0:
+#     f_digit=a%10
+#     result+=f_digit**n
+#     a=a//10
+# if result==original:
+#     print("enter number is armstrong number !!")
+# else:
+#     print("enterd number is not armstrong number!")
+
+# a=int(input("enter a number to check wether it is armstrong or not :"))
+# n=len(str(a))
+# org=a
+# result=0
+# while a>0:
+#     fd=a%10
+#     result+=fd**n
+#     a//=10
+
+# if result==org:
+#     print("enterd number is armstrong number :")
+# else:
+#     print("enterd number is not armstrong number ::")
+    
+
+# secondlargest elmetn in the list 
+
+# l=[]
+# for i in range(10):
+#     a=int(input("enter a number to add in a list ::"))
+#     l.append(a)
+# l=list(set(l))
+# l.sort()
+# c=l.max()
+# print(c)
+# # print(f'second largest element is {l[-2]}')
+
+# pallindrome checker
+# a=input("entre a number to check wether it is pallindrome or not !")
+# original=a
+# n=len(a)
+# b=[0]*n
+# i=0
+# size=len(b)
+# for i in range(n):
+#     b[size-1]=a[i]
+#     i+=1
+#     size-=1
+
+# if b==original:
+#     print("no is pallindrome !")
+# else:
+#     print("number is not palindrome :")
+
+# a=input("entre a number to check wether it is pallindrome or not !")
+# if a==a[ : :-1]:
+#     print("pallindrome")
+# else:
+#     print("not pallindrome")
+# factorial
+# def fact(n):
+#     result=1
+#     for i in range(1,a+1):
+#         result*=i
+#     return result
+
+# a=int(input("enter a number to find factorial"))
+# res=fact(a)
+# print(f'factorial to the number {a} is {res}')
+
+
+#generate fibonachi no
+
+# def generate_fibonachi_no(n):
+#     if n<=0:
+#         return 0
+#     elif n==1:
+#         return 0
+#     sec=[0,1]
+#     for i in range(2,n):
+#         next_no=sec[-1]+sec[-2]
+#         sec.append(next_no)
+#     return sec
+# a=int(input("enter a number to find the fib. seq upto it ::"))
+# res=generate_fibonachi_no(a)
+# print(f'fib upto {a} is {res}')
+
+# append the zeros to the left
+l=[]
+for i in range(10):
+    a=int(input("enter 10 numbers to enter in a list ::"))
+    l.append(a)
+score=0
+zero_idx=[]
+idx=0
+for i in l:
+    if i==0:
+        score+=1
+        zero_idx.append(idx)
+    idx+=1
+print(f'there are {score} zeros present in the list :')
+print("present at these indexes ->")
+print(zero_idx)
+present=0
+for i in zero_idx:
+    l.remove(l[i-present])
+    present+=1
+for i in range(score):
+    l.append(0)
+print("final modified list is ::")
+print(l)
+        

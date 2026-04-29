@@ -1,0 +1,5 @@
+flask
+sqlalchemy
+html -> chatgpt
+
+(small flasks libs)

@@ -1,0 +1,353 @@
+understand everyting from the ground level all the things like bootstraping and how they works and key points in syntax
+
+also the backend functioning and routhing and core logic thats it   
+
+everything i am able to do from my self   ~ spyder aidev love you all 
+
+
+
+
+from flask import Flask ,redirect,render_template,url_for,session,flash,request
+from datetime import timedelta
+from flask_sqlalchemy import SQLAlchemy
+
+app=Flask(__name__)
+app.secret_key="vivekkali"
+app.permanent_session_lifetime=timedelta(minutes=60)
+app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///User.sqlite3'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+db=SQLAlchemy(app)
+
+class User(db.Model):
+    name=db.Column(db.String(30))
+    mobile_no=db.Column(db.String(13),primary_key=True)
+
+    def __init__(self,name,mobile_no):
+        self.name=name  
+        self.mobile_no=mobile_no
+
+@app.route("/",methods=["GET","POST"])
+def login():
+    session.permanent=True
+    if request.method=="POST":
+        name=request.form.get("name")
+        mobile_no=request.form.get("mobile_no")
+        
+        if len(mobile_no)==10:
+            new_user=User(
+            name=name,
+            mobile_no=mobile_no
+            )
+            db.session.add(new_user)
+            db.session.commit()
+            return "<h2> logged in thank you user</h2>"
+        else:
+            flash("worng mobile_no")
+            return render_template("login.html")
+    else:
+        if "name" not in session:
+            return render_template("login.html")
+        
+        else:
+            return render_template("login.html")
+
+
+if __name__=="__main__":
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)  
+
+
+=====================================================================================================================================
+take a look that project and fix the bugs
+
+from flask import Flask,session,flash,redirect,render_template,url_for,request
+from datetime import timedelta
+from datetime import datetime
+from flask_sqlalchemy import SQLAlchemy
+
+app=Flask(__name__)
+app.secret_key="vivekkali"
+app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///me.sqlite3'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+db=SQLAlchemy(app)
+
+class me(db.Model):
+    name=db.Column(db.String(30),nullable=False)
+    address=db.Column(db.String(30),nullable=False)
+    mobile_no=db.Column(db.String(13),primary_key=True)
+    activity=db.Column(db.String(10),nullable=False)
+    hight=db.Column(db.Integer,nullable=False)
+    weight=db.Column(db.Integer,nullable=False)
+    age=db.Column(db.Integer,nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+
+with app.app_context():
+    db.create_all()
+
+def suggest_diet(hight,weight):
+    score=0
+    if 150<hight<160 :
+        score=50
+        if 30<weight<40:
+            score+=15
+        elif 41<weight<50:
+            score+=35
+        elif 50<weight<60:
+            score+=50
+        elif 60<weight<70:
+            score+=40
+        elif 70<weight<80:
+            score+=25
+        elif 80<weight<90:
+            score+=20
+        elif weight>90:
+            score+=10
+        elif weight<30:
+            score+=10
+
+    elif 160<hight<170 :
+        score=50
+        if 30<weight<40:
+            score+=10
+        elif 41<weight<50:
+            score+=30
+        elif 50<weight<60:
+            score+=40
+        elif 60<weight<70:
+            score+=50
+        elif 70<weight<80:
+            score+=30
+        elif 80<weight<90:
+            score+=20
+        elif weight>90:
+            score+=10
+        elif weight<30:
+            score+=10
+    
+    elif 170<hight<180 :
+        score=50
+        if 30<weight<40:
+            score+=10
+        elif 41<weight<50:
+            score+=20
+        elif 50<weight<60:
+            score+=30
+        elif 60<weight<70:
+            score+=40
+        elif 70<weight<80:
+            score+=50
+        elif 80<weight<90:
+            score+=40
+        elif weight>90:
+            score+=10
+        elif weight<30:
+            score+=10
+    
+    elif 180<hight<190 :
+        score=50
+        if 30<weight<40:
+            score+=10
+        elif 41<weight<50:
+            score+=10
+        elif 50<weight<60:
+            score+=20
+        elif 60<weight<70:
+            score+=30
+        elif 70<weight<80:
+            score+=40
+        elif 80<weight<90:
+            score+=50
+        elif weight>90 and weight<100:
+            score+=30
+        elif weight>100:
+            score+=10
+        elif weight<30:
+            score+=10
+
+    elif 122<hight<150 :
+
+        score=50
+        if 10<weight<20:
+            score+=10
+        elif 20<weight<30:
+            score+=20
+        elif 30<weight<35:
+            score+=35
+        elif 35<weight<40:
+            score+=40                  # there are so many bugs  fix range bug / input bug / score bug / casing   ~ spyder aidev love you all
+        elif 40<weight<50:
+            score+=50
+        elif 50<weight<60:
+            score+=45
+        elif weight>60 and weight>70:
+            score+=30
+        elif weight>70:
+            score+=10
+        elif weight<10:
+            score+=10
+    
+    if score==50:
+        return "you are unfit"
+    elif 50<score<60:
+        return "you need to focus on your health"
+    elif 60<score<70:
+        return "keep focusking on your health bro!"
+    elif 70<score<80:
+        return "good do yoga and meditation"
+    elif 80<score<90:
+        return "you are one step far bro love you"
+    elif 90<score<100:
+        return "you are idelly fit bro !!"
+    
+    else :
+        return"something went wrong / enter hight in cms and weight in kilograms"
+
+
+
+        
+    
+
+    
+       
+ 
+
+@app.route("/",methods=['GET','POST'])
+def home():
+    if request.method=="POST":
+        name=request.form.get("name")
+        address=request.form.get("address")
+        mobile_no=request.form.get("mobile_no")
+        activity=request.form.get("activity")
+        
+        hight=float(request.form.get("hight"))
+        weight=float(request.form.get("weight"))
+        age=float(request.form.get("age"))
+        
+
+        if not name or len(name)<2 or name.strip()=="":
+            return "enterd name is incorrect"
+        if not address or len(address)<4 or address.strip()=="":
+            return "enterd address is incorrect"
+        if not mobile_no or len(mobile_no)<2 or mobile_no.strip()=="" or len(mobile_no) !=10:
+            return "enterd mobile no is incorrect"
+        if not age  or age=="":
+            return "enterd age is incorrect"                    # type error in the code
+        if not weight or weight=="":
+            return "enterd weight is incorrect"
+        if not hight or hight=="":
+            return "enterd hight is incorrect"
+        if not activity or len(activity)<2 or activity.strip()=="":
+            return "enterd activity is incorrect"
+        
+        
+        session["name"]=name
+        session["address"]=address
+        session["mobile_no"]=mobile_no
+        session["activity"]=activity
+        session["hight"]=hight
+        session["weight"]=weight
+        session["age"]=age
+
+        response=suggest_diet(hight=hight,weight=weight)
+        session["res"]=response
+
+        new_user=me(
+            name=name,
+            address=address,
+            mobile_no=mobile_no,
+            activity=activity,
+            hight=hight,
+            weight=weight,
+            age=age          
+        )
+
+        try:
+            db.session.add(new_user)
+            db.session.commit()
+            print("user added to database")
+        except Exception as e :
+            db.session.rollback()
+            print(e)
+            
+        return redirect(url_for('result'))
+    else :
+        return render_template("me.html")
+    
+@app.route("/result",methods=["GET","POST"])
+def result():
+    rating=session["res"]
+    return render_template("result.html",rating=rating)
+
+
+
+if __name__=="__main__":
+    app.run(debug=True)
+
+=====================================================================================================================================
+
+basic foundation of the calori calculator !!
+
+from flask import Flask,redirect,render_template,request,url_for,session,flash
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash,check_password_hash
+from datetime import datetime
+from datetime import timedelta
+
+app=Flask(__name__)
+app.secret_key="vivekkali"
+app.permanent_session_lifetime=timedelta(hours=1)
+app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///vivekkali.sqlite3'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+db=SQLAlchemy(app)
+
+class vivekkali(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    name=db.Column(db.String(30),nullable=False)
+    mobile=db.Column(db.String(13),nullable=False)
+    email=db.Column(db.String(100),nullable=False)
+    hashed_password=db.Column(db.String(200),nullable=False)
+
+    @property
+    def password(self):
+        raise AttributeError("someting went wrong !!")
+    @password.setter
+    def password(self,password):
+        self.hashed_password=generate_password_hash(password)
+
+    def check_password (self,password):
+        return check_password_hash(self.hashed_password, password)
+    
+
+
+class fitness_info(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    identty=db.Column(db.Integer,db.ForeignKey('vivekkali.id'),nullable=False )
+    age=db.Column(db.Float,nullable=False)
+    height=db.Column(db.Float,nullable=False)
+    weight=db.Column(db.Float,nullable=False)
+    gender=db.Column(db.String(10),nullable=False)
+    activity=db.Column(db.String(10),nullable=False)
+    goal=db.Column(db.Float,nullable=False)
+    bmi=db.Column(db.Float,nullable=False)
+    calories=db.Column(db.Float,nullable=False)
+    diet_plan=db.Column(db.String(10000),nullable=False)
+    created_at=db.Column(db.DateTime,default=datetime.utcnow,nullable=False)
+
+with app.app_context():
+    db.create_all()
+
+
+@app.route("/",methods=['GET','POST'])
+def home():
+    return render_template ("index.html")
+
+
+
+if __name__=="__main__":
+    app.run(debug=True)
+
+
+
+
+    

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+       {% block content %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for msg in messages %}
+    <p>{{ msg }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% endblock %}
+    <header></header>
+    <main>
+      <h1>COMPLAINT PORTAL </h1>
+      <br>
+      <BR>
+        <H3>THE TOURIST SAKHA IS THE COMPLAINT FOR THE TOURIST THEAT FACE THE PORBLEM WEHN THE SHOPKEERS 
+          FORCE SELL THE GOODS TO THEM AT MORE RATE THAN THE ACTUAL MRP /// SO RAISE YOUR VOICE AGAINTS THE TRAP 
+        </H3>
+        <br>
+        <br>
+        <br>
+
+        <form accept="#" method="post">
+          <input type="text" name="rname" placeholder="enter the RETAILERS name">
+          <input type="text" name="rmobile_no" placeholder="enter the RETAILERS mobile_no">
+          <input type="text" name="raddress" placeholder="enter the RETAILERS/shop address">
+          <input type="text" name="discription" placeholder="enter discription of the event">
+          <input type="submit" value="submit COMPLAINT">
+
+        </form>
+
+                <br>
+        <br>
+        <br>
+        <br>
+<h4> selling at price higher then the mrp price is the crime please let us know </h4>
+        <br>
+        <br>
+        <br>
+<h6> a application by vivek kumbhar (spidey)</h6>
+    </main>
+    <footer></footer>
+  </body>
+</html>

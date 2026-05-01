@@ -1,0 +1,15 @@
+the infinite redirection loops are the terms in which the page or route is not loading dut to the loop calling 
+
+the lines
+
+if request.method=="POST':
+  pass
+else:
+  flash("login page")
+  return(redirct(url_for('/login')
+
+things happening : when the user goes to the login route then first ly the request is of GET the it gets redircted to the same route with get requeset and 
+           agin checks for the request and all the things this is called THE INFINITE REDIRECTION LOOP 
+
+
+TO COUNTER THIS  use the return render_template for sure

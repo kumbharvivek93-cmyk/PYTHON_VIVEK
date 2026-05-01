@@ -1,0 +1,90 @@
+SO BASICALLY SOME OF OUR FRINDS ARE WELL KNOWN ABOUT THE SQL BUT SOME MIGHT NOT 
+
+so sqlalchemy is the ORM ( object relational mapper) 
+
+>>>📌 What Is SQLAlchemy?
+
+SQLAlchemy is:
+
+👉 A Python library
+👉 That helps Python talk to a database
+👉 Without writing raw SQL every time
+
+It sits between:
+
+Python App  →  SQLAlchemy  →  DBMS
+
+in which we  1. clsss is table 
+to declare columns we follow 
+
+col_name=db.Column(db.dtype ,constrains)
+col_name=db.Column(db.dtype ,constrains)
+col_name=db.Column(db.dtype ,constrains)
+
+-------------------------------------------------------------------------------------------------------------
+TO USE SQLALCHEMY WE HAVE TO FOLLOW SOME STAPES THAT ARE ::1. importing 
+
+from flask_sqlalchemy import SQLAlchemy
+
+2. configuration 
+
+app.config["SQLALCHEMY_DATABASE_URI"]=sqlite:///user.sqlite3
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+
+3. setup database
+
+db=SQLAlchemy(app)
+
+4.create tables means classes
+
+class user(db.model):
+  name=db.Column(db.String(100))
+  name=db.Column(db.String(100))
+  name=db.Column(db.String(100))
+  name=db.Column(db.String(100))
+  name=db.Column(db.String(100))
+
+
+5.at the end in block of 
+
+if __name__=="__main__":
+  db.create all()
+  app.run(debug=True)
+
+-------------------------------------------------------------------------------------------------------------
+CODE EXAMPLE::
+rom flask import Flask,redirect,render_template,url_for,session,flash,request
+from flask_sqlalchemy import SQLAlchemy
+app=Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"]="sqlite :///users.sqlite3"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+app.secret_key="vivekkali"
+db=SQLAlchemy(app)
+
+class users(db.Model):
+    _id=db.Column(db.Integer,primary_key=True)
+    name=db.Column(db.String(100))
+    email=db.Column(db.String(100))
+
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/login",methods=["GET","POST"])
+def login():
+    if request.method=="POST":
+        EMAIL=request.form.get("email")
+        session["email"]=EMAIL
+        return "login successful"
+    else:
+        return render_template("login.html")
+@app.route("/user")
+def user():
+    email=session["email"]
+    return f'email of user is {email}'     ~VIVEK SIR AIDEV   LOVE YOU ALL
+
+
+if __name__=="__main__":
+    db.create_all()
+    app.run(debug=True)

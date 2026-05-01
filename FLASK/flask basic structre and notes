@@ -1,0 +1,14 @@
+form flask import Flask,render_templates,redirect,for_url
+app=Flask(__name__)
+
+@app.route("/")
+def home():
+  return "hellow user"
+
+@app.route("/project")
+def prodect():
+  return render_templates("index.html")   # also concept of redirect and notes i upload soon
+
+
+if __name__=="__main__":
+  app.run(debug=True)

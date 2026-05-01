@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <header></header>
+  <main>
+    {% block content %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for msg in messages %}
+    <p>{{ msg }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% endblock %}
+    <h1> TOURIST SAKHA</h1>
+    <br>
+    <H3> OUR GOAL IS TO TAKE COMPLAINT OF THE RETAILERS WHAT FORCE SELLS THE GOODS AT PRICE HIGHER THAN MRP </H3>
+    <br>
+    <h4> if you have account login and if you have't signup</h4>
+    <a href="/login">login here</a>
+    <hr>
+    <a href="/signup">signup here</a>
+
+  </main>
+  <footer></footer>
+</body>
+
+</html>

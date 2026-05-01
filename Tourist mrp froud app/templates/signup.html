@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>signup</title>
+</head>
+
+<body>
+  <header></header>
+  <main>
+    {% block content %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for msg in messages %}
+    <p>{{ msg }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% endblock %}
+    <h1> signup</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form accept="#" method="post">
+      <input type="text" name="name" placeholder="enter your name">
+      <input type="text" name="mobile_no" placeholder="enter your mobile no">
+      <input type="email" name="email" placeholder="enter your email">
+      <input type="text" name="password" placeholder="enter your password">
+      <input type="submit" value="submit">
+
+
+    </form>
+
+
+  </main>
+  <footer></footer>
+</body>
+
+</html>

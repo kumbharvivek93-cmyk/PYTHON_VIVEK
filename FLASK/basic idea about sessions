@@ -1,0 +1,43 @@
+so now take a look : when we login into instagram or any app or web app or website if page relaods sometimes 
+our all data is gone but sometimes our all data is saved up this is because of sessions 
+
+so sessions are storing functions that store data between HTTP requests and are more powerful 
+
+though they are temprory means when we exit from web app or restat divice or app then our data is gone 
+
+basically sessions is a way to remembring the information about user between http requests !! 
+
+
+
+THINGS TO REMEMBER WHEN USING THE SESSIONS
+
+so the sessions strores the information between http requests  :
+
+1.make sure we allowed the http methods in the functions rute 
+
+2. always go with 
+
+ user=requests.form.get("key_from_html_input)
+session["key"]=user
+
+safe way by requests.form.get(")
+
+3.second step checkup
+
+if "key" in session:
+data=session["key"]
+return "data"
+
+
+4. always give a secret key while using the sessions other wise they would crash 
+i.e.  app.secret_key="vivekkali"
+
+
+---------------------------------------------------------------------------------------------------
+
+logout means deleting the uesrs session data and redirecting user to login page 
+
+def logout():
+    session.pop("key",None)
+    return redirect(url_for("home"))
+                                                   ~ vivek aidev (sir)

@@ -1,1385 +1,1486 @@
-# # # # # # # # # # # from flask import Flask , render_template , redirect, for_url
-# # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # student=True
+# # # # # # # # # # # # # # from flask import Flask , render_template , redirect, for_url
+# # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # student=True
 
-# # # # # # # # # # # a=int(input("if you are student then enter 1 if you are not student then type 0"))
-# # # # # # # # # # # if a==1:
+# # # # # # # # # # # # # # a=int(input("if you are student then enter 1 if you are not student then type 0"))
+# # # # # # # # # # # # # # if a==1:
 
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return "<h2>how are you user i wont to welcome you buddy"
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return "<h2>how are you user i wont to welcome you buddy"
 
-# # # # # # # # # # # def project():
-# # # # # # # # # # #     if student:
-# # # # # # # # # # #         return render_template("index.html")
-
-
-
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run()
+# # # # # # # # # # # # # # def project():
+# # # # # # # # # # # # # #     if student:
+# # # # # # # # # # # # # #         return render_template("index.html")
 
 
-# # # # # # # # # # # from flask import Flask,render_template,url_for,redirect
 
-# # # # # # # # # # # app=Flask(__name__)
-
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return "how are you user"
-# # # # # # # # # # # @app.route("/project")
-# # # # # # # # # # # def project():
-# # # # # # # # # # #     return render_template("index.html")
-# # # # # # # # # # # @app.route("/admin")
-# # # # # # # # # # # def admin():
-# # # # # # # # # # #     print("how are you vivek admin !")
-# # # # # # # # # # #     return redirect(url_for("project"))
-# # # # # # # # # # #     # print("how are you vivek admin !")
-
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run()
-
-# # # # # # # # # # #  tamplates
-
-# # # # # # # # # # # from flask import Flask, url_for,redirect,render_template
-# # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("index.html",context="master vivek kumbhar")
-
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run()
-
-# # # # # # # # # # # from flask import Flask , redirect,render_template,url_for
-# # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run()
 
 
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # # # # from flask import Flask,render_template,url_for,redirect
 
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run()
+# # # # # # # # # # # # # # app=Flask(__name__)
 
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return "how are you user"
+# # # # # # # # # # # # # # @app.route("/project")
+# # # # # # # # # # # # # # def project():
+# # # # # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # # # # @app.route("/admin")
+# # # # # # # # # # # # # # def admin():
+# # # # # # # # # # # # # #     print("how are you vivek admin !")
+# # # # # # # # # # # # # #     return redirect(url_for("project"))
+# # # # # # # # # # # # # #     # print("how are you vivek admin !")
 
-# # # # # # # # # # # from flask import Flask , render_template, redirect , url_for
-# # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("wellcome.html")
-# # # # # # # # # # # @app.route("/user")
-# # # # # # # # # # # def user():
-# # # # # # # # # # #     return render_template("user.html")
-# # # # # # # # # # # @app.route("/project")
-# # # # # # # # # # # def project():
-# # # # # # # # # # #     return render_template("project.html")
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run()
 
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run()
+# # # # # # # # # # # # # #  tamplates
 
+# # # # # # # # # # # # # # from flask import Flask, url_for,redirect,render_template
+# # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("index.html",context="master vivek kumbhar")
 
-# # # # # # # # # # # dynamic information 
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run()
 
-# # # # # # # # # # # from flask import Flask , render_template, redirect,url_for
-# # # # # # # # # # # app=Flask(__name__)
-
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("vivek.html",contents=["vivek","rama","omkar","yash"])
-
-
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run()
-
-# # # # # # # # # # # from flask import Flask,render_template
-
-# # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("vivek.html",contents=["omkar","dadaso","kumbhar"])
+# # # # # # # # # # # # # # from flask import Flask , redirect,render_template,url_for
+# # # # # # # # # # # # # # app=Flask(__name__)
 
 
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run(debug=True)
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("index.html")
 
-# # # # # # # # # # # lect three template inheritance and boot striping 
-
-# # # # # # # # # # # from flask import Flask,redirect,url_for,render_template
-# # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # @app.route("/")    # we have to add the bootstrap to base website (novbar footbar and some common buttons etc)
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("lect3practice.html")
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run()
 
 
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run(debug=True)
+# # # # # # # # # # # # # # from flask import Flask , render_template, redirect , url_for
+# # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("wellcome.html")
+# # # # # # # # # # # # # # @app.route("/user")
+# # # # # # # # # # # # # # def user():
+# # # # # # # # # # # # # #     return render_template("user.html")
+# # # # # # # # # # # # # # @app.route("/project")
+# # # # # # # # # # # # # # def project():
+# # # # # # # # # # # # # #     return render_template("project.html")
 
-# # # # # # # # # # # from flask import Flask ,render_template
-# # # # # # # # # # # app=Flask(__name__)
-
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("lect3practice.html")
-
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run(debug=True)
-
-# # # # # # # # # # # from flask import Flask,redirect,render_template,url_for
-# # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # flag=False
-# # # # # # # # # # # admin_list=[100,10,101,102,105]
-# # # # # # # # # # # a=input("if you are admin then type (yes) : ")
-# # # # # # # # # # # if a=="yes" or a=="Yes":
-# # # # # # # # # # #     b=int(input("enter you admin id ::"))
-# # # # # # # # # # #     for i in admin_list:
-# # # # # # # # # # #         if b==i:
-# # # # # # # # # # #             flag=True
-
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("lect3parctice.html")
-
-# # # # # # # # # # # @app.route("/project")
-# # # # # # # # # # # def project():
-# # # # # # # # # # #     if flag==False:
-# # # # # # # # # # #         return redirect(url_for("home"))
-# # # # # # # # # # #     return render_template("index.html")
-
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run(debug=True)
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run()
 
 
-# # # # # # # # # # # from flask import Flask,request,render_template,redirect,url_for
-# # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return "<h1>hellow uer how are you </h1>"
-# # # # # # # # # # # @app.route("/login")
-# # # # # # # # # # # def login():
-# # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # # # # dynamic information 
 
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run(debug=True)
+# # # # # # # # # # # # # # from flask import Flask , render_template, redirect,url_for
+# # # # # # # # # # # # # # app=Flask(__name__)
 
-# # # # # # # # # # #  template inheritance
-# # # # # # # # # # # from flask import Flask,render_template,request
-# # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("vivek.html",contents=["vivek","rama","omkar","yash"])
 
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("index.html")
-# # # # # # # # # # # @app.route("/project")
-# # # # # # # # # # # def project():
-# # # # # # # # # # #     return render_template("vivek.html")
 
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run(debug=True)
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run()
 
-# # # # # # # # # # # from flask import Flask , render_template
-# # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("index.html")
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run(debug=True)
+# # # # # # # # # # # # # # from flask import Flask,render_template
 
-# # # # # # # # # # # from flask import Flask,render_template,redirect,url_for,request
-# # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("vivek.html",contents=["omkar","dadaso","kumbhar"])
 
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("index.html")
-# # # # # # # # # # # @app.route("/login",methods=["GET","POST"])
-# # # # # # # # # # # def login():
-# # # # # # # # # # #     if request.method=="POST":
-# # # # # # # # # # #         user=request.form["nm"]
-# # # # # # # # # # #         return redirect(url_for("user",usr=user))
 
-# # # # # # # # # # # #     else :
-# # # # # # # # # # # #         return render_template("login.html")
-# # # # # # # # # # # # @app.route("/<usr>")
-# # # # # # # # # # # # def user(usr):
-# # # # # # # # # # # #     return f'welcome {user} from Facebook '
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # # lect three template inheritance and boot striping 
+
+# # # # # # # # # # # # # # from flask import Flask,redirect,url_for,render_template
+# # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # @app.route("/")    # we have to add the bootstrap to base website (novbar footbar and some common buttons etc)
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("lect3practice.html")
+
+
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # # from flask import Flask ,render_template
+# # # # # # # # # # # # # # app=Flask(__name__)
+
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("lect3practice.html")
+
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # # from flask import Flask,redirect,render_template,url_for
+# # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # flag=False
+# # # # # # # # # # # # # # admin_list=[100,10,101,102,105]
+# # # # # # # # # # # # # # a=input("if you are admin then type (yes) : ")
+# # # # # # # # # # # # # # if a=="yes" or a=="Yes":
+# # # # # # # # # # # # # #     b=int(input("enter you admin id ::"))
+# # # # # # # # # # # # # #     for i in admin_list:
+# # # # # # # # # # # # # #         if b==i:
+# # # # # # # # # # # # # #             flag=True
+
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("lect3parctice.html")
+
+# # # # # # # # # # # # # # @app.route("/project")
+# # # # # # # # # # # # # # def project():
+# # # # # # # # # # # # # #     if flag==False:
+# # # # # # # # # # # # # #         return redirect(url_for("home"))
+# # # # # # # # # # # # # #     return render_template("index.html")
+
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run(debug=True)
+
+
+# # # # # # # # # # # # # # from flask import Flask,request,render_template,redirect,url_for
+# # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return "<h1>hellow uer how are you </h1>"
+# # # # # # # # # # # # # # @app.route("/login")
+# # # # # # # # # # # # # # def login():
+# # # # # # # # # # # # # #     return render_template("index.html")
+
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # #  template inheritance
+# # # # # # # # # # # # # # from flask import Flask,render_template,request
+# # # # # # # # # # # # # # app=Flask(__name__)
+
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # # # # @app.route("/project")
+# # # # # # # # # # # # # # def project():
+# # # # # # # # # # # # # #     return render_template("vivek.html")
+
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # # from flask import Flask , render_template
+# # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # # from flask import Flask,render_template,redirect,url_for,request
+# # # # # # # # # # # # # # app=Flask(__name__)
+
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # # # # @app.route("/login",methods=["GET","POST"])
+# # # # # # # # # # # # # # def login():
+# # # # # # # # # # # # # #     if request.method=="POST":
+# # # # # # # # # # # # # #         user=request.form["nm"]
+# # # # # # # # # # # # # #         return redirect(url_for("user",usr=user))
+
+# # # # # # # # # # # # # # #     else :
+# # # # # # # # # # # # # # #         return render_template("login.html")
+# # # # # # # # # # # # # # # @app.route("/<usr>")
+# # # # # # # # # # # # # # # def user(usr):
+# # # # # # # # # # # # # # #     return f'welcome {user} from Facebook '
         
     
+    
+    
+
+# # # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # # # from flask import Flask, request, render_template, session, redirect, url_for
+
+# # # # # # # # # # # # # # # app = Flask(__name__)
+# # # # # # # # # # # # # # # app.secret_key = "vivek@123"
+
+
+# # # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # # #     return render_template("index.html")
+
+
+# # # # # # # # # # # # # # # @app.route("/login.html", methods=["GET", "POST"])
+# # # # # # # # # # # # # # # def login():
+# # # # # # # # # # # # # # #     if request.method == "POST":
+# # # # # # # # # # # # # # # #         password = request.form.get("pass")  # SAFE ACCESS
+
+# # # # # # # # # # # # # # # #         if password:
+# # # # # # # # # # # # # # # #             session["userpass"] = password
+# # # # # # # # # # # # # # # #             return redirect(url_for("user"))  # Go to /pass automatically
+# # # # # # # # # # # # # # # #         else:
+# # # # # # # # # # # # # # # #             return "Password not received!"
+
+# # # # # # # # # # # # # # # #     return render_template("login.html")
+
+
+# # # # # # # # # # # # # # # # @app.route("/pass")
+# # # # # # # # # # # # # # # # def user():
+# # # # # # # # # # # # # # # #     final_pass = session.get("userpass")
+
+# # # # # # # # # # # # # # # #     if final_pass:
+# # # # # # # # # # # # # # # #         return f"Password is {final_pass}"
+# # # # # # # # # # # # # # # #     else:
+# # # # # # # # # # # # # # # #         return "No password stored. Please login first."
+
+
+# # # # # # # # # # # # # # # # @app.route("/logout")
+# # # # # # # # # # # # # # # # def logout():
+# # # # # # # # # # # # # # # #     session.pop("userpass", None)
+# # # # # # # # # # # # # # # #     return "Logged out successfully!"
+
+
+# # # # # # # # # # # # # # # # if __name__ == "__main__":
+# # # # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # # # # # from flask import Flask,render_template,redirect,url_for
+# # # # # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # # # # # #     return render_template("login.html")
+
+# # # # # # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # # # # from flask import Flask, redirect, request, url_for, render_template
+
+# # # # # # # # # # # # # # # # app = Flask(__name__)
+
+# # # # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # # # #     return render_template("index.html")
+
+# # # # # # # # # # # # # # # # @app.route("/login", methods=["GET", "POST"])
+# # # # # # # # # # # # # # # # def login():
+# # # # # # # # # # # # # # # #     if request.method == "POST":
+# # # # # # # # # # # # # # # #         password = request.form["pass"]   # get form data
+# # # # # # # # # # # # # # # #         return redirect(url_for("user", usr=password))
+# # # # # # # # # # # # # # # #     else:
+# # # # # # # # # # # # # # # #         return render_template("index.html")
+
+# # # # # # # # # # # # # # # # @app.route("/<usr>")
+# # # # # # # # # # # # # # # # def user(usr):
+# # # # # # # # # # # # # # # #     return f'your password is {usr}'
+
+# # # # # # # # # # # # # # # # if __name__ == "__main__":
+# # # # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # # from flask import Flask ,render_template,redirect,url_for,request,session
+# # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # app.secret_key="vivek_kali"
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # # # # @app.route("/login",methods=["GET","POST"])
+# # # # # # # # # # # # # # def login():
+# # # # # # # # # # # # # #     if request.method=="POST":
+# # # # # # # # # # # # # #         user=request.form["username"]
+# # # # # # # # # # # # # #         session["username"]=user
+# # # # # # # # # # # # # #         password=request.form["password"]
+# # # # # # # # # # # # # #         session["password"]=password
+        
+# # # # # # # # # # # # # #         return redirect(url_for("user"))
+# # # # # # # # # # # # # #     else:
+# # # # # # # # # # # # # #         return render_template("login.html")
+    
+
+# # # # # # # # # # # # # # @app.route("/steal")
+# # # # # # # # # # # # # # def user():
+# # # # # # # # # # # # # #     name=session["username"]
+# # # # # # # # # # # # # #     password=session["username"]
+
+# # # # # # # # # # # # # #     return f"username is {name} and password is {password}"
+    
+
+
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # # from flask import Flask,render_template,redirect,url_for ,session,request
+# # # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # # app.secret_key="yashraj"
+# # # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # # def home():
+# # # # # # # # # # # # # #     return render_template("index.html")
+
+# # # # # # # # # # # # # # @app.route("/login",methods=["GET","POST"])
+# # # # # # # # # # # # # # def login():
+# # # # # # # # # # # # # #     if request.method=="POST":
+# # # # # # # # # # # # # #         password=request.form.get("password")
+# # # # # # # # # # # # # #         session["password"]=password
+# # # # # # # # # # # # # #         return" login successfully"
+# # # # # # # # # # # # # #     else:
+# # # # # # # # # # # # # #         if "password" in session:  # if we have sighned in then move to home page instead of logging in 
+# # # # # # # # # # # # # #             return redirect(url_for("home"))  # when redirecting always use the functins name instead of templates name
+# # # # # # # # # # # # # #         return render_template("login.html")
+# # # # # # # # # # # # # # @app.route("/data")
+# # # # # # # # # # # # # # def data():
+# # # # # # # # # # # # # #     if "password" in session:
+# # # # # # # # # # # # # #         data=session["password"]
+# # # # # # # # # # # # # #     return f'the password is {data}'
+# # # # # # # # # # # # # # @app.route("/logout")
+# # # # # # # # # # # # # # def logout():
+# # # # # # # # # # # # # #     session.pop("password",None)
+# # # # # # # # # # # # # #     return redirect(url_for("login"))
+
+
+
+# # # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # # from flask import Flask,render_template,redirect,url_for,request,session
+# # # # # # # # # # # # # from datetime import timedelta
+# # # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # # app.secret_key="yashraj"
+# # # # # # # # # # # # # app.permanent_session_lifetime=timedelta(days=2)
+# # # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # # def home():
+# # # # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # # # @app.route("/login",methods=["GET","POST"])
+# # # # # # # # # # # # # def login():
+# # # # # # # # # # # # #     session.permanent=True
+# # # # # # # # # # # # #     if request.method=="POST":
+# # # # # # # # # # # # #         password=request.form.get("password")
+# # # # # # # # # # # # #         session["password"]=password
+# # # # # # # # # # # # #         return "<h3> login successful</h3>"
+# # # # # # # # # # # # #     else:
+# # # # # # # # # # # # #         if "password" in session:
+# # # # # # # # # # # # #             return redirect(url_for("home"))
+# # # # # # # # # # # # #         return render_template("login.html")
+            
+    
+# # # # # # # # # # # # # @app.route("/data") 
+# # # # # # # # # # # # # def user():
+# # # # # # # # # # # # #     if "password" in session:
+# # # # # # # # # # # # #         final_password=session["password"]
+# # # # # # # # # # # # #         return f"password is {final_password}"
+# # # # # # # # # # # # #     else:
+# # # # # # # # # # # # #         return render_template("index.html")
+    
+# # # # # # # # # # # # # @app.route("/logout")
+# # # # # # # # # # # # # def logout():
+# # # # # # # # # # # # #     session.pop("password",None)
+# # # # # # # # # # # # #     return redirect(url_for("login"))
+    
+
+# # # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # from flask import Flask,render_template ,redirect,url_for,request,session,flash
+# # # # # # # # # # # # from datetime import timedelta
+# # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # app.secret_key="yashraj"
+# # # # # # # # # # # # app.permanent_session_lifetime=timedelta(days=5)
+# # # # # # # # # # # # @app.route("/")
+# # # # # # # # # # # # def home():
+# # # # # # # # # # # #     flash("logged in successful !!")
+# # # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # # @app.route("/login",methods=["GET","POST"])
+# # # # # # # # # # # # def login():
+# # # # # # # # # # # #     session.permanent=True
+# # # # # # # # # # # #     if request.method=="POST":
+# # # # # # # # # # # #         name=request.form.get("username")
+# # # # # # # # # # # #         session["name"]=name
+# # # # # # # # # # # #         flash("logged in successfully !!")
+# # # # # # # # # # # #         return redirect(url_for("user"))
+    
+    
+# # # # # # # # # # # #     else :
+# # # # # # # # # # # #         if "name" in session:
+# # # # # # # # # # # #             return render_template("index.html")
+# # # # # # # # # # # #         return render_template("login.html")
+        
+# # # # # # # # # # # # @app.route("/user")
+# # # # # # # # # # # # def user():
+# # # # # # # # # # # #     final_name=session["name"]
+# # # # # # # # # # # #     if "name" in session:
+# # # # # # # # # # # #         return f'heyyy {final_name}'
+
+    
+# # # # # # # # # # # # @app.route("/logout",methods=["GET","POST"]) 
+# # # # # # # # # # # # def logout():
+# # # # # # # # # # # #     if request.method== "POST":
+# # # # # # # # # # # #         res=request.form.get("confirm_logout")
+# # # # # # # # # # # #         if res == "yes":
+# # # # # # # # # # # #             session.pop("username",None)
+# # # # # # # # # # # #             session.pop("password",None)
+# # # # # # # # # # # #             return "logged-out successfully !!"
+# # # # # # # # # # # #     else:
+# # # # # # # # # # # #         return redirect(url_for("home"))
+# # # # # # # # # # # #     return render_template("logout.html")
+
+
+
+
+
+# # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # #     app.run(debug=True)
+
+# # # # # # # # # # # # from flask import Flask,render_template,redirect,url_for,session,flash,request
+# # # # # # # # # # # # from flask_sqlalchemy import SQLAlchemy
+# # # # # # # # # # # # from datetime import timedelta
+# # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # app.secret_key="yashraj"
+# # # # # # # # # # # # app.permanent_session_lifetime= timedelta(minutes=2)
+
+# # # # # # # # # # # # @app.route("/",methods=["GET","POST"])
+# # # # # # # # # # # # def home():
+# # # # # # # # # # # #     if request.method=="POST":
+# # # # # # # # # # # #         email=request.form.get("email")
+# # # # # # # # # # # #         session["email"]=email
+# # # # # # # # # # # #         flash("email saved successfully !!")
+# # # # # # # # # # # #         return render_template("index.html")
+# # # # # # # # # # # #     else:
+# # # # # # # # # # # #         return render_template("general_login.html")
     
     
 
 # # # # # # # # # # # # if __name__=="__main__":
 # # # # # # # # # # # #     app.run(debug=True)
+            
+# # # # # # # # # # # # from flask import Flask,render_template,redirect,url_for,session,flash,request
+# # # # # # # # # # # # from datetime import timedelta
 
-# # # # # # # # # # # # from flask import Flask, request, render_template, session, redirect, url_for
-
-# # # # # # # # # # # # app = Flask(__name__)
-# # # # # # # # # # # # app.secret_key = "vivek@123"
-
-
+# # # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # # # app.secret_key="yashraj"
+# # # # # # # # # # # # app.permanent_session_lifetime=timedelta(days=1)
 # # # # # # # # # # # # @app.route("/")
 # # # # # # # # # # # # def home():
 # # # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # #     app.run(debug=True)
 
+# # # # # # # # # # # #  create a login page 
 
-# # # # # # # # # # # # @app.route("/login.html", methods=["GET", "POST"])
-# # # # # # # # # # # # def login():
-# # # # # # # # # # # #     if request.method == "POST":
-# # # # # # # # # # # # #         password = request.form.get("pass")  # SAFE ACCESS
+# # # # # # # # # # # from flask import Flask, render_template, request,session,flash,url_for,redirect
 
-# # # # # # # # # # # # #         if password:
-# # # # # # # # # # # # #             session["userpass"] = password
-# # # # # # # # # # # # #             return redirect(url_for("user"))  # Go to /pass automatically
-# # # # # # # # # # # # #         else:
-# # # # # # # # # # # # #             return "Password not received!"
+# # # # # # # # # # # app = Flask(__name__)
 
-# # # # # # # # # # # # #     return render_template("login.html")
+# # # # # # # # # # # def calculate_score(moisture, brix, fiber, node_length, weight):
+# # # # # # # # # # #     score = 0
 
-
-# # # # # # # # # # # # # @app.route("/pass")
-# # # # # # # # # # # # # def user():
-# # # # # # # # # # # # #     final_pass = session.get("userpass")
-
-# # # # # # # # # # # # #     if final_pass:
-# # # # # # # # # # # # #         return f"Password is {final_pass}"
-# # # # # # # # # # # # #     else:
-# # # # # # # # # # # # #         return "No password stored. Please login first."
-
-
-# # # # # # # # # # # # # @app.route("/logout")
-# # # # # # # # # # # # # def logout():
-# # # # # # # # # # # # #     session.pop("userpass", None)
-# # # # # # # # # # # # #     return "Logged out successfully!"
-
-
-# # # # # # # # # # # # # if __name__ == "__main__":
-# # # # # # # # # # # # #     app.run(debug=True)
-
-# # # # # # # # # # # # # # from flask import Flask,render_template,redirect,url_for
-# # # # # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # # # # # def home():
-# # # # # # # # # # # # # # #     return render_template("login.html")
-
-# # # # # # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # # # # # #     app.run(debug=True)
-
-# # # # # # # # # # # # # from flask import Flask, redirect, request, url_for, render_template
-
-# # # # # # # # # # # # # app = Flask(__name__)
-
-# # # # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # # # def home():
-# # # # # # # # # # # # #     return render_template("index.html")
-
-# # # # # # # # # # # # # @app.route("/login", methods=["GET", "POST"])
-# # # # # # # # # # # # # def login():
-# # # # # # # # # # # # #     if request.method == "POST":
-# # # # # # # # # # # # #         password = request.form["pass"]   # get form data
-# # # # # # # # # # # # #         return redirect(url_for("user", usr=password))
-# # # # # # # # # # # # #     else:
-# # # # # # # # # # # # #         return render_template("index.html")
-
-# # # # # # # # # # # # # @app.route("/<usr>")
-# # # # # # # # # # # # # def user(usr):
-# # # # # # # # # # # # #     return f'your password is {usr}'
-
-# # # # # # # # # # # # # if __name__ == "__main__":
-# # # # # # # # # # # # #     app.run(debug=True)
-
-# # # # # # # # # # # from flask import Flask ,render_template,redirect,url_for,request,session
-# # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # app.secret_key="vivek_kali"
-# # # # # # # # # # # @app.route("/")
-# # # # # # # # # # # def home():
-# # # # # # # # # # #     return render_template("index.html")
-# # # # # # # # # # # @app.route("/login",methods=["GET","POST"])
-# # # # # # # # # # # def login():
-# # # # # # # # # # #     if request.method=="POST":
-# # # # # # # # # # #         user=request.form["username"]
-# # # # # # # # # # #         session["username"]=user
-# # # # # # # # # # #         password=request.form["password"]
-# # # # # # # # # # #         session["password"]=password
-        
-# # # # # # # # # # #         return redirect(url_for("user"))
+# # # # # # # # # # #     # Moisture (25 marks)
+# # # # # # # # # # #     if 65 <= moisture <= 75:
+# # # # # # # # # # #         score += 25
 # # # # # # # # # # #     else:
-# # # # # # # # # # #         return render_template("login.html")
-    
+# # # # # # # # # # #         score += max(0, 25 - abs(70 - moisture))
 
-# # # # # # # # # # # @app.route("/steal")
-# # # # # # # # # # # def user():
-# # # # # # # # # # #     name=session["username"]
-# # # # # # # # # # #     password=session["username"]
+# # # # # # # # # # #     # Brix (30 marks)
+# # # # # # # # # # #     if 18 <= brix <= 22:
+# # # # # # # # # # #         score += 30
+# # # # # # # # # # #     else:
+# # # # # # # # # # #         score += max(0, 30 - abs(20 - brix)*2)
 
-# # # # # # # # # # #     return f"username is {name} and password is {password}"
-    
+# # # # # # # # # # #     # Fiber (20 marks)
+# # # # # # # # # # #     if 10 <= fiber <= 15:
+# # # # # # # # # # #         score += 20
+# # # # # # # # # # #     else:
+# # # # # # # # # # #         score += max(0, 20 - abs(12 - fiber)*2)
 
+# # # # # # # # # # #     # Node Length (15 marks)
+# # # # # # # # # # #     if 8 <= node_length <= 12:
+# # # # # # # # # # #         score += 15
 
-# # # # # # # # # # # if __name__=="__main__":
-# # # # # # # # # # #     app.run(debug=True)
+# # # # # # # # # # #     # Weight (10 marks)
+# # # # # # # # # # #     if weight >= 1:
+# # # # # # # # # # #         score += 10
 
-# # # # # # # # # # # from flask import Flask,render_template,redirect,url_for ,session,request
-# # # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # # # app.secret_key="yashraj"
-# # # # # # # # # # # @app.route("/")
+# # # # # # # # # # #     return round(score, 2)
+
+# # # # # # # # # # # @app.route("/", methods=["GET", "POST"])
 # # # # # # # # # # # def home():
+# # # # # # # # # # #     if request.method == "POST":
+# # # # # # # # # # #         moisture = float(request.form["moisture"])
+# # # # # # # # # # #         brix = float(request.form["brix"])
+# # # # # # # # # # #         fiber = float(request.form["fiber"])
+# # # # # # # # # # #         node_length = float(request.form["node_length"])
+# # # # # # # # # # #         weight = float(request.form["weight"])
+
+# # # # # # # # # # #         score = calculate_score(moisture, brix, fiber, node_length, weight)
+
+# # # # # # # # # # #         if score >= 85:
+# # # # # # # # # # #             grade = "A"
+# # # # # # # # # # #         elif score >= 70:
+# # # # # # # # # # #             grade = "B"
+# # # # # # # # # # #         elif score >= 50:
+# # # # # # # # # # #             grade = "C"
+# # # # # # # # # # #         else:
+# # # # # # # # # # #             grade = "D"
+
+# # # # # # # # # # #         return render_template("result.html", score=score, grade=grade)
+
 # # # # # # # # # # #     return render_template("index.html")
+# # # # # # # # # # # @app.route("/farmer")
+# # # # # # # # # # # def farmer():
+# # # # # # # # # # #     return render_template("farmer.html")
 
 # # # # # # # # # # # @app.route("/login",methods=["GET","POST"])
 # # # # # # # # # # # def login():
 # # # # # # # # # # #     if request.method=="POST":
-# # # # # # # # # # #         password=request.form.get("password")
-# # # # # # # # # # #         session["password"]=password
-# # # # # # # # # # #         return" login successfully"
-# # # # # # # # # # #     else:
-# # # # # # # # # # #         if "password" in session:  # if we have sighned in then move to home page instead of logging in 
-# # # # # # # # # # #             return redirect(url_for("home"))  # when redirecting always use the functins name instead of templates name
-# # # # # # # # # # #         return render_template("login.html")
-# # # # # # # # # # # @app.route("/data")
-# # # # # # # # # # # def data():
-# # # # # # # # # # #     if "password" in session:
-# # # # # # # # # # #         data=session["password"]
-# # # # # # # # # # #     return f'the password is {data}'
-# # # # # # # # # # # @app.route("/logout")
-# # # # # # # # # # # def logout():
-# # # # # # # # # # #     session.pop("password",None)
-# # # # # # # # # # #     return redirect(url_for("login"))
+# # # # # # # # # # #         USER=request.form.get("username")
+# # # # # # # # # # #         PASSWORD=request.form.get("password")
+# # # # # # # # # # #         flash
 
 
-
-# # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # # # if __name__ == "__main__":
 # # # # # # # # # # #     app.run(debug=True)
 
-# # # # # # # # # # from flask import Flask,render_template,redirect,url_for,request,session
-# # # # # # # # # # from datetime import timedelta
+# # # # # # # # # # from flask import Flask,redirect,render_template,url_for,session,flash,request
+# # # # # # # # # # from flask_sqlalchemy import SQLAlchemy
 # # # # # # # # # # app=Flask(__name__)
+# # # # # # # # # # app.config["SQLALCHEMY_DATABASE_URI"]="sqlite :///users.sqlite3"
+# # # # # # # # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 # # # # # # # # # # app.secret_key="yashraj"
-# # # # # # # # # # app.permanent_session_lifetime=timedelta(days=2)
+# # # # # # # # # # db=SQLAlchemy(app)
+
+# # # # # # # # # # class users(db.Model):
+# # # # # # # # # #     _id=db.Column(db.Integer,primary_key=True)
+# # # # # # # # # #     name=db.Column(db.String(100))
+# # # # # # # # # #     email=db.Column(db.String(100))
+
+
 # # # # # # # # # # @app.route("/")
 # # # # # # # # # # def home():
 # # # # # # # # # #     return render_template("index.html")
+
 # # # # # # # # # # @app.route("/login",methods=["GET","POST"])
 # # # # # # # # # # def login():
-# # # # # # # # # #     session.permanent=True
 # # # # # # # # # #     if request.method=="POST":
-# # # # # # # # # #         password=request.form.get("password")
-# # # # # # # # # #         session["password"]=password
-# # # # # # # # # #         return "<h3> login successful</h3>"
+# # # # # # # # # #         EMAIL=request.form.get("email")
+# # # # # # # # # #         session["email"]=EMAIL
+# # # # # # # # # #         return "login successful"
 # # # # # # # # # #     else:
-# # # # # # # # # #         if "password" in session:
-# # # # # # # # # #             return redirect(url_for("home"))
 # # # # # # # # # #         return render_template("login.html")
-            
-    
-# # # # # # # # # # @app.route("/data") 
+# # # # # # # # # # @app.route("/user")
 # # # # # # # # # # def user():
-# # # # # # # # # #     if "password" in session:
-# # # # # # # # # #         final_password=session["password"]
-# # # # # # # # # #         return f"password is {final_password}"
-# # # # # # # # # #     else:
-# # # # # # # # # #         return render_template("index.html")
-    
-# # # # # # # # # # @app.route("/logout")
-# # # # # # # # # # def logout():
-# # # # # # # # # #     session.pop("password",None)
-# # # # # # # # # #     return redirect(url_for("login"))
-    
+# # # # # # # # # #     email=session["email"]
+# # # # # # # # # #     return f'email of user is {email}'
+
 
 # # # # # # # # # # if __name__=="__main__":
+# # # # # # # # # #     db.create_all()
 # # # # # # # # # #     app.run(debug=True)
 
-# # # # # # # # # from flask import Flask,render_template ,redirect,url_for,request,session,flash
-# # # # # # # # # from datetime import timedelta
-# # # # # # # # # app=Flask(__name__)
-# # # # # # # # # app.secret_key="yashraj"
-# # # # # # # # # app.permanent_session_lifetime=timedelta(days=5)
-# # # # # # # # # @app.route("/")
-# # # # # # # # # def home():
-# # # # # # # # #     flash("logged in successful !!")
-# # # # # # # # #     return render_template("index.html")
-# # # # # # # # # @app.route("/login",methods=["GET","POST"])
-# # # # # # # # # def login():
-# # # # # # # # #     session.permanent=True
-# # # # # # # # #     if request.method=="POST":
-# # # # # # # # #         name=request.form.get("username")
-# # # # # # # # #         session["name"]=name
-# # # # # # # # #         flash("logged in successfully !!")
-# # # # # # # # #         return redirect(url_for("user"))
-    
-    
-# # # # # # # # #     else :
-# # # # # # # # #         if "name" in session:
-# # # # # # # # #             return render_template("index.html")
-# # # # # # # # #         return render_template("login.html")
-        
-# # # # # # # # # @app.route("/user")
-# # # # # # # # # def user():
-# # # # # # # # #     final_name=session["name"]
-# # # # # # # # #     if "name" in session:
-# # # # # # # # #         return f'heyyy {final_name}'
-
-    
-# # # # # # # # # @app.route("/logout",methods=["GET","POST"]) 
-# # # # # # # # # def logout():
-# # # # # # # # #     if request.method== "POST":
-# # # # # # # # #         res=request.form.get("confirm_logout")
-# # # # # # # # #         if res == "yes":
-# # # # # # # # #             session.pop("username",None)
-# # # # # # # # #             session.pop("password",None)
-# # # # # # # # #             return "logged-out successfully !!"
-# # # # # # # # #     else:
-# # # # # # # # #         return redirect(url_for("home"))
-# # # # # # # # #     return render_template("logout.html")
-
-
-
-
-
-# # # # # # # # # if __name__=="__main__":
-# # # # # # # # #     app.run(debug=True)
-
-# # # # # # # # # from flask import Flask,render_template,redirect,url_for,session,flash,request
+# # # # # # # # # from flask import Flask,render_template,session,request,redirect,url_for,flash
 # # # # # # # # # from flask_sqlalchemy import SQLAlchemy
-# # # # # # # # # from datetime import timedelta
-# # # # # # # # # app=Flask(__name__)
-# # # # # # # # # app.secret_key="yashraj"
-# # # # # # # # # app.permanent_session_lifetime= timedelta(minutes=2)
-
-# # # # # # # # # @app.route("/",methods=["GET","POST"])
-# # # # # # # # # def home():
-# # # # # # # # #     if request.method=="POST":
-# # # # # # # # #         email=request.form.get("email")
-# # # # # # # # #         session["email"]=email
-# # # # # # # # #         flash("email saved successfully !!")
-# # # # # # # # #         return render_template("index.html")
-# # # # # # # # #     else:
-# # # # # # # # #         return render_template("general_login.html")
-    
-    
-
-# # # # # # # # # if __name__=="__main__":
-# # # # # # # # #     app.run(debug=True)
-            
-# # # # # # # # # from flask import Flask,render_template,redirect,url_for,session,flash,request
-# # # # # # # # # from datetime import timedelta
 
 # # # # # # # # # app=Flask(__name__)
-# # # # # # # # # app.secret_key="yashraj"
-# # # # # # # # # app.permanent_session_lifetime=timedelta(days=1)
+# # # # # # # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///user.sqlite3'
+# # # # # # # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+# # # # # # # # # app.secret_key="vivekali"
+
+# # # # # # # # # db=SQLAlchemy(app)
+
+# # # # # # # # # class user(db.Model):
+# # # # # # # # #     name=db.Column(db.String(30))
+# # # # # # # # #     id=db.Column(db.Integer , primary_key=True)
+
+# # # # # # # # #     def __init__(self,name,id):
+# # # # # # # # #         self.name=name
+# # # # # # # # #         self.id=id
 # # # # # # # # # @app.route("/")
 # # # # # # # # # def home():
-# # # # # # # # #     return render_template("index.html")
+# # # # # # # # #     return render_template("")
+
+
 # # # # # # # # # if __name__=="__main__":
+# # # # # # # # #     db.create_all()
 # # # # # # # # #     app.run(debug=True)
 
-# # # # # # # # #  create a login page 
 
-# # # # # # # # from flask import Flask, render_template, request,session,flash,url_for,redirect
+# # # # # # # # from flask import Flask,render_template,request,redirect,url_for,session,flash
+# # # # # # # # from flask_sqlalchemy import SQLAlchemy
+# # # # # # # # from datetime import timedelta
 
-# # # # # # # # app = Flask(__name__)
+# # # # # # # # app=Flask(__name__)
+# # # # # # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///User.sqlite3'
+# # # # # # # # app.config["SQLALCHEMT_TRACK_MODIFICATIONS"]=False
+# # # # # # # # app.secret_key="yashraj"
+# # # # # # # # app.permanent_session_lifetime=timedelta(minutes=60)
 
-# # # # # # # # def calculate_score(moisture, brix, fiber, node_length, weight):
-# # # # # # # #     score = 0
+# # # # # # # # db=SQLAlchemy(app)
 
-# # # # # # # #     # Moisture (25 marks)
-# # # # # # # #     if 65 <= moisture <= 75:
-# # # # # # # #         score += 25
-# # # # # # # #     else:
-# # # # # # # #         score += max(0, 25 - abs(70 - moisture))
+# # # # # # # # class User(db.Model):
+# # # # # # # #     id=db.Column(db.Integer,primary_key=True)
+# # # # # # # #     name=db.Column(db.String(40))
+# # # # # # # #     password=db.Column(db.String(20))
 
-# # # # # # # #     # Brix (30 marks)
-# # # # # # # #     if 18 <= brix <= 22:
-# # # # # # # #         score += 30
-# # # # # # # #     else:
-# # # # # # # #         score += max(0, 30 - abs(20 - brix)*2)
-
-# # # # # # # #     # Fiber (20 marks)
-# # # # # # # #     if 10 <= fiber <= 15:
-# # # # # # # #         score += 20
-# # # # # # # #     else:
-# # # # # # # #         score += max(0, 20 - abs(12 - fiber)*2)
-
-# # # # # # # #     # Node Length (15 marks)
-# # # # # # # #     if 8 <= node_length <= 12:
-# # # # # # # #         score += 15
-
-# # # # # # # #     # Weight (10 marks)
-# # # # # # # #     if weight >= 1:
-# # # # # # # #         score += 10
-
-# # # # # # # #     return round(score, 2)
-
-# # # # # # # # @app.route("/", methods=["GET", "POST"])
+# # # # # # # #     def __init__(self,id,name,password):
+# # # # # # # #         self.id=id
+# # # # # # # #         self.password=password
+# # # # # # # #         self.name=name
+# # # # # # # #         super().__init__()
+# # # # # # # # @app.route("/",methods=["GET","POST"])
 # # # # # # # # def home():
-# # # # # # # #     if request.method == "POST":
-# # # # # # # #         moisture = float(request.form["moisture"])
-# # # # # # # #         brix = float(request.form["brix"])
-# # # # # # # #         fiber = float(request.form["fiber"])
-# # # # # # # #         node_length = float(request.form["node_length"])
-# # # # # # # #         weight = float(request.form["weight"])
-
-# # # # # # # #         score = calculate_score(moisture, brix, fiber, node_length, weight)
-
-# # # # # # # #         if score >= 85:
-# # # # # # # #             grade = "A"
-# # # # # # # #         elif score >= 70:
-# # # # # # # #             grade = "B"
-# # # # # # # #         elif score >= 50:
-# # # # # # # #             grade = "C"
-# # # # # # # #         else:
-# # # # # # # #             grade = "D"
-
-# # # # # # # #         return render_template("result.html", score=score, grade=grade)
-
-# # # # # # # #     return render_template("index.html")
-# # # # # # # # @app.route("/farmer")
-# # # # # # # # def farmer():
-# # # # # # # #     return render_template("farmer.html")
-
-# # # # # # # # @app.route("/login",methods=["GET","POST"])
-# # # # # # # # def login():
+# # # # # # # #     session.permanent=True
 # # # # # # # #     if request.method=="POST":
-# # # # # # # #         USER=request.form.get("username")
-# # # # # # # #         PASSWORD=request.form.get("password")
-# # # # # # # #         flash
+# # # # # # # #         id=request.form.get("id")
+# # # # # # # #         name=request.form.get("name")
+# # # # # # # #         password=request.form.get("password")
 
+# # # # # # # #         new_user=User(
+# # # # # # # #             id=id,
+# # # # # # # #             name=name,
+# # # # # # # #             password=password
+# # # # # # # #         )
+# # # # # # # #         session["id"]=id
+# # # # # # # #         session["name"]=name
+# # # # # # # #         session["password"]=password
 
-# # # # # # # # if __name__ == "__main__":
+# # # # # # # #         db.session.add(new_user)
+# # # # # # # #         db.session.commit()   
+# # # # # # # #         return render_template("base.html", name=session["name"])
+# # # # # # # #     else:
+# # # # # # # #         return render_template("practice.html")
+# # # # # # # # if __name__=="__main__":
+# # # # # # # #     with app.app_context():
+# # # # # # # #         db.create_all()
 # # # # # # # #     app.run(debug=True)
 
-# # # # # # # from flask import Flask,redirect,render_template,url_for,session,flash,request
+
+# # # # # # # from flask import Flask,render_template ,redirect,url_for,session,flash,request
 # # # # # # # from flask_sqlalchemy import SQLAlchemy
+# # # # # # # from datetime import timedelta
+# # # # # # # from second import second
+
 # # # # # # # app=Flask(__name__)
-# # # # # # # app.config["SQLALCHEMY_DATABASE_URI"]="sqlite :///users.sqlite3"
-# # # # # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 # # # # # # # app.secret_key="yashraj"
+# # # # # # # app.permanent_session_lifetime=timedelta(minutes=30)
+# # # # # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///User.sqlite3'
+# # # # # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+# # # # # # # app.register_blueprint(second,url_prifix='')
+
+
 # # # # # # # db=SQLAlchemy(app)
 
-# # # # # # # class users(db.Model):
-# # # # # # #     _id=db.Column(db.Integer,primary_key=True)
-# # # # # # #     name=db.Column(db.String(100))
-# # # # # # #     email=db.Column(db.String(100))
+# # # # # # # class User(db.Model):
+# # # # # # #     name=db.Column(db.String(30),primary_key=True)
+    
 
+# # # # # # #     def __init__(self,name,no):
+# # # # # # #         self.name=name
+        
 
 # # # # # # # @app.route("/")
 # # # # # # # def home():
-# # # # # # #     return render_template("index.html")
+# # # # # # #     return render_template("spongebob.html")
 
 # # # # # # # @app.route("/login",methods=["GET","POST"])
 # # # # # # # def login():
 # # # # # # #     if request.method=="POST":
-# # # # # # #         EMAIL=request.form.get("email")
-# # # # # # #         session["email"]=EMAIL
-# # # # # # #         return "login successful"
+# # # # # # #         name=request.form.get("name")
+# # # # # # #         no=request.form.get("no")
+
+# # # # # # #         new_user=User(
+# # # # # # #             name=name,
+            
+# # # # # # #         )
+# # # # # # #         db.session.add(new_user)
+# # # # # # #         db.session.commit()
+# # # # # # #         return f"logged in successful {session["name"]}"
 # # # # # # #     else:
-# # # # # # #         return render_template("login.html")
-# # # # # # # @app.route("/user")
-# # # # # # # def user():
-# # # # # # #     email=session["email"]
-# # # # # # #     return f'email of user is {email}'
+# # # # # # #         if "name" in session:
+# # # # # # #             return f"already logged in {session["name"]}"
+# # # # # # #         else :
+# # # # # # #             return render_template("login.html")
+
 
 
 # # # # # # # if __name__=="__main__":
-# # # # # # #     db.create_all()
+# # # # # # #     with app.app_context():
+# # # # # # #         db.create_all()
 # # # # # # #     app.run(debug=True)
-
-# # # # # # from flask import Flask,render_template,session,request,redirect,url_for,flash
-# # # # # # from flask_sqlalchemy import SQLAlchemy
-
-# # # # # # app=Flask(__name__)
-# # # # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///user.sqlite3'
-# # # # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
-# # # # # # app.secret_key="vivekali"
-
-# # # # # # db=SQLAlchemy(app)
-
-# # # # # # class user(db.Model):
-# # # # # #     name=db.Column(db.String(30))
-# # # # # #     id=db.Column(db.Integer , primary_key=True)
-
-# # # # # #     def __init__(self,name,id):
-# # # # # #         self.name=name
-# # # # # #         self.id=id
-# # # # # # @app.route("/")
-# # # # # # def home():
-# # # # # #     return render_template("")
-
-
-# # # # # # if __name__=="__main__":
-# # # # # #     db.create_all()
-# # # # # #     app.run(debug=True)
-
-
-# # # # # from flask import Flask,render_template,request,redirect,url_for,session,flash
-# # # # # from flask_sqlalchemy import SQLAlchemy
-# # # # # from datetime import timedelta
-
-# # # # # app=Flask(__name__)
-# # # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///User.sqlite3'
-# # # # # app.config["SQLALCHEMT_TRACK_MODIFICATIONS"]=False
-# # # # # app.secret_key="yashraj"
-# # # # # app.permanent_session_lifetime=timedelta(minutes=60)
-
-# # # # # db=SQLAlchemy(app)
-
-# # # # # class User(db.Model):
-# # # # #     id=db.Column(db.Integer,primary_key=True)
-# # # # #     name=db.Column(db.String(40))
-# # # # #     password=db.Column(db.String(20))
-
-# # # # #     def __init__(self,id,name,password):
-# # # # #         self.id=id
-# # # # #         self.password=password
-# # # # #         self.name=name
-# # # # #         super().__init__()
-# # # # # @app.route("/",methods=["GET","POST"])
-# # # # # def home():
-# # # # #     session.permanent=True
-# # # # #     if request.method=="POST":
-# # # # #         id=request.form.get("id")
-# # # # #         name=request.form.get("name")
-# # # # #         password=request.form.get("password")
-
-# # # # #         new_user=User(
-# # # # #             id=id,
-# # # # #             name=name,
-# # # # #             password=password
-# # # # #         )
-# # # # #         session["id"]=id
-# # # # #         session["name"]=name
-# # # # #         session["password"]=password
-
-# # # # #         db.session.add(new_user)
-# # # # #         db.session.commit()   
-# # # # #         return render_template("base.html", name=session["name"])
-# # # # #     else:
-# # # # #         return render_template("practice.html")
-# # # # # if __name__=="__main__":
-# # # # #     with app.app_context():
-# # # # #         db.create_all()
-# # # # #     app.run(debug=True)
-
-
-# # # # from flask import Flask,render_template ,redirect,url_for,session,flash,request
-# # # # from flask_sqlalchemy import SQLAlchemy
-# # # # from datetime import timedelta
-# # # # from second import second
-
-# # # # app=Flask(__name__)
-# # # # app.secret_key="yashraj"
-# # # # app.permanent_session_lifetime=timedelta(minutes=30)
-# # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///User.sqlite3'
-# # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
-# # # # app.register_blueprint(second,url_prifix='')
-
-
-# # # # db=SQLAlchemy(app)
-
-# # # # class User(db.Model):
-# # # #     name=db.Column(db.String(30),primary_key=True)
-    
-
-# # # #     def __init__(self,name,no):
-# # # #         self.name=name
         
+# # # # # # # from flask_sqlalchemy import SQLAlchemy as db
 
-# # # # @app.route("/")
-# # # # def home():
-# # # #     return render_template("spongebob.html")
+# # # # # # # print(db.__version__)
 
-# # # # @app.route("/login",methods=["GET","POST"])
-# # # # def login():
-# # # #     if request.method=="POST":
-# # # #         name=request.form.get("name")
-# # # #         no=request.form.get("no")
+# # # # # # # from flask import Flask ,redirect,render_template,url_for,session,flash,request
+# # # # # # # from datetime import timedelta
+# # # # # # # from flask_sqlalchemy import SQLAlchemy
+# # # # # # # import os
 
-# # # #         new_user=User(
-# # # #             name=name,
-            
-# # # #         )
-# # # #         db.session.add(new_user)
-# # # #         db.session.commit()
-# # # #         return f"logged in successful {session["name"]}"
-# # # #     else:
-# # # #         if "name" in session:
-# # # #             return f"already logged in {session["name"]}"
-# # # #         else :
-# # # #             return render_template("login.html")
-
-
-
-# # # # if __name__=="__main__":
-# # # #     with app.app_context():
-# # # #         db.create_all()
-# # # #     app.run(debug=True)
-        
-# # # # from flask_sqlalchemy import SQLAlchemy as db
-
-# # # # print(db.__version__)
-
-# # # # from flask import Flask ,redirect,render_template,url_for,session,flash,request
-# # # # from datetime import timedelta
-# # # # from flask_sqlalchemy import SQLAlchemy
-# # # # import os
-
-# # # # app=Flask(__name__)
-# # # # app.secret_key="yashraj"
-# # # # app.permanent_session_lifetime=timedelta(minutes=60)
-# # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///Vivek.sqlite3'
-# # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
-# # # # db=SQLAlchemy(app)
+# # # # # # # app=Flask(__name__)
+# # # # # # # app.secret_key="yashraj"
+# # # # # # # app.permanent_session_lifetime=timedelta(minutes=60)
+# # # # # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///Vivek.sqlite3'
+# # # # # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+# # # # # # # db=SQLAlchemy(app)
 
 
    
 
-# # # # class Vivek(db.Model):
-# # # #     name=db.Column(db.String(30))
-# # # #     mobile_no=db.Column(db.String(13),primary_key=True)
+# # # # # # # class Vivek(db.Model):
+# # # # # # #     name=db.Column(db.String(30))
+# # # # # # #     mobile_no=db.Column(db.String(13),primary_key=True)
 
-# # # #     def __init__(self,name,mobile_no):
-# # # #         self.name=name  
-# # # #         self.mobile_no=mobile_no
+# # # # # # #     def __init__(self,name,mobile_no):
+# # # # # # #         self.name=name  
+# # # # # # #         self.mobile_no=mobile_no
 
+# # # # # # # with app.app_context():
+# # # # # # #     db.create_all()
+
+# # # # # # # @app.route("/",methods=["GET","POST"])
+
+# # # # # # # def login():
+# # # # # # #     session.permanent=True
+# # # # # # #     if request.method=="POST":
+# # # # # # #         name=request.form.get("name")
+# # # # # # #         mobile_no=request.form.get("mobile_no")
+# # # # # # #         session["name"]=name
+# # # # # # #         session["mobile_no"]=mobile_no
+
+        
+# # # # # # #         if len(mobile_no)==10:
+# # # # # # #             new_user=Vivek(
+# # # # # # #             name=name,
+# # # # # # #             mobile_no=mobile_no
+# # # # # # #             )
+            
+# # # # # # #             try:
+# # # # # # #                 db.session.add(new_user)
+# # # # # # #                 db.session.commit()
+# # # # # # #             except Exception as e:
+# # # # # # #                 db.session.rollback()
+# # # # # # #                 print(e)
+
+
+# # # # # # #             print("user added")
+# # # # # # #             return "<h2> logged in thank you user</h2>"
+# # # # # # #         else:
+# # # # # # #             flash("worng mobile_no")
+# # # # # # #             return render_template("login.html")
+# # # # # # #     else:
+# # # # # # #         return render_template("login.html")
+
+# # # # # # #  flask rivision final attempt
+
+# # # # # # from flask import Flask,redirect,session,request,render_template,url_for,flash
+# # # # # # from flask_sqlalchemy import SQLAlchemy
+# # # # # # from datetime import timedelta
+# # # # # # from datetime import datetime
+
+# # # # # # app=Flask(__name__)
+# # # # # # app.secret_key="yashraj"
+# # # # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///timeexp.sqlite3'
+# # # # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+# # # # # # db=SQLAlchemy(app)
+# # # # # # app.permanent_session_lifetime=timedelta(minutes=15)
+
+# # # # # # class timeexp(db.Model):
+# # # # # #     name=db.Column(db.String(30))
+# # # # # #     mo=db.Column(db.String(30))
+# # # # # #     adhar=db.Column(db.String(30),primary_key=True)
+# # # # # #     created_at=db.Column(db.DateTime,default=datetime.utcnow,nullable=False)
+
+# # # # # #     def __inti__(self,name,mo,adhar):
+# # # # # #         self.name=name
+# # # # # #         self.mo=mo
+# # # # # #         self.adhar=adhar
+# # # # # #         self.created_at=self.created_at
+
+# # # # # # with app.app_context():
+# # # # # #     db.create_all()
+
+# # # # # #    # define function here if needed 
+
+
+# # # # # # @app.route("/", methods=["GET","POST"])
+# # # # # # def home():
+# # # # # #     session.permanent=True
+# # # # # #     if request.method=="POST":
+# # # # # #         name=request.form.get("name")
+# # # # # #         mo=request.form.get("mo")
+# # # # # #         adhar=request.form.get("adhar")
+
+# # # # # #         if not name or name.strip()=="":   # not name means the name is not none ?? or len(name)<3 : return "name too short "
+# # # # # #             return "name cannot be emply"
+        
+# # # # # #         if not mo.isdigit() or len(mo)!=10:   # this is called as the validation 
+# # # # # #             return "error in the mobile no "
+        
+# # # # # #         if not adhar.isdigit() or len(adhar)!=12:
+# # # # # #             return "error in the adhar !"
+            
+
+# # # # # #         session["name"]=name
+# # # # # #         session["mo"]=mo
+# # # # # #         session["adhar"]=adhar    # protect inputs and their types and values !!
+
+# # # # # #         new_user=timeexp(
+# # # # # #             name=name,
+# # # # # #             mo=mo,
+# # # # # #             adhar=adhar
+# # # # # #         )
+        
+# # # # # #         try:
+# # # # # #             db.session.add(new_user)
+# # # # # #             db.session.commit()
+# # # # # #             print("user added in database")
+# # # # # #         except Exception as e :
+# # # # # #             db.session.rollback()
+# # # # # #             print(e)
+
+# # # # # #         return "user added successfully !!"
+# # # # # #     else:
+# # # # # #         if "name" in session:
+# # # # # #             return "logged in already !!"
+# # # # # #         else :
+# # # # # #             return render_template("testing.html")
+        
+# # # # # # if __name__=="__main__":
+# # # # # #     app.run(debug=True)
+
+# # # # #    # password hashing
+# # # # #    #  
+
+# # # # # # from flask import Flask,redirect,render_template,url_for,session,flash,request
+# # # # # # from flask_sqlalchemy import SQLAlchemy
+# # # # # # import os
+# # # # # # from datetime import timedelta
+# # # # # # from datetime import datetime
+# # # # # # from werkzeug.security import generate_password_hash, check_password_hash
+
+# # # # # # app=Flask(__name__)
+# # # # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///Password.sqlite3'
+# # # # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+# # # # # # app.permanent_session_lifetime=timedelta(minutes=60)
+# # # # # # db=SQLAlchemy(app)
+# # # # # # app.secret_key="yashraj"
+
+# # # # # # class Password(db.Model):
+# # # # # #     id = db.Column(db.Integer, primary_key=True)   # primary key is imp
+# # # # # #     name=db.Column(db.String(30))
+# # # # # #     password_hash=db.Column(db.String(200),nullable=False)
+
+# # # # # #     @property
+# # # # # #     def password(self):
+# # # # # #         raise AttributeError ("something went wrong")
+    
+# # # # # #     @password.setter
+# # # # # #     def password(self,password):
+# # # # # #         self.password_hash=generate_password_hash(password)
+
+# # # # # #     def check_password(self,password):
+# # # # # #         return check_password_hash(self.password_hash,password)
+
+# # # # # # with app.app_context():
+# # # # # #     db.create_all()
+    
+# # # # # # @app.route("/",methods=["GET","POST"])
+# # # # # # def home():
+# # # # # #     if request.method=="POST":
+# # # # # #         name=request.form.get("name")
+# # # # # #         password=request.form.get("password")
+
+# # # # # #         if not password or password.strip()=="":
+# # # # # #             return "password cannot be emply or something went wrong"  # add the validation for the name also
+
+# # # # # #         session["name"]=name   # do not store the plain password in sessions
+
+
+# # # # # #         new_user=Password(
+# # # # # #             name=name,
+# # # # # #             password=password
+# # # # # #         )
+
+# # # # # #         try:
+# # # # # #             db.session.add(new_user)
+# # # # # #             db.session.commit()
+# # # # # #             print("user added to database")
+# # # # # #         except Exception as e :
+# # # # # #             db.session.rollback()
+# # # # # #             print(e)
+
+# # # # # #         return "vivek aidev/python dev"
+# # # # # #     else :
+# # # # # #         return render_template("password.html")
+
+    
+
+
+# # # # # # if __name__=="__main__":
+# # # # # #     app.run(debug=True)
+ 
+
+# # # # # # from flask import Flask, flash, redirect, render_template, url_for, session, request
+# # # # # # from flask_sqlalchemy import SQLAlchemy
+# # # # # # from datetime import datetime
+# # # # # # from datetime import timedelta
+# # # # # # from werkzeug.security import generate_password_hash, check_password_hash
+
+# # # # # # app = Flask(__name__)
+# # # # # # app.secret_key = "yashraj"
+# # # # # # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///yashraj.sqlite3"
+# # # # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+# # # # # # app.permanent_session_lifetime = timedelta(minutes=60)
+# # # # # # db = SQLAlchemy(app)
+
+
+# # # # # # class yashraj(db.Model):
+# # # # # #     id = db.Column(db.Integer, primary_key=True)
+# # # # # #     name = db.Column(db.String(50), nullable=False)
+# # # # # #     email = db.Column(db.String(50), nullable=False)
+# # # # # #     hashed_password = db.Column(db.String(200), nullable=False)
+# # # # # #     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+
+# # # # # #     @property
+# # # # # #     def password(self):
+# # # # # #         raise AttributeError("something went wrong !!")
+
+# # # # # #     @password.setter
+# # # # # #     def password(self, password):
+# # # # # #         self.hashed_password = generate_password_hash(password)
+
+# # # # # #     def check_password(self, password):
+# # # # # #         return check_password_hash(self.hashed_password,password)
+
+
+# # # # # # class heal(db.Model):
+# # # # # #     id = db.Column(db.Integer, primary_key=True)
+# # # # # #     age = db.Column(db.Integer, nullable=False)
+# # # # # #     hieht = db.Column(db.Integer, nullable=False)
+# # # # # #     weight = db.Column(db.Integer, nullable=False)
+# # # # # #     gender = db.Column(db.String(10), nullable=False)
+
+# # # # # # with app.app_context():
+# # # # # #     db.create_all()
+# # # # # #     print("database is created successfully !!")
+
+
+# # # # # # def calculate_bmi_value(height, weight):
+# # # # # #     height_m = height / 100
+# # # # # #     bmi = weight / (height_m ** 2)
+# # # # # #     return bmi
+
+
+# # # # # # def get_logged_in_user():
+# # # # # #     user_id = session.get("user_id")
+# # # # # #     if not user_id:
+# # # # # #         return None
+# # # # # #     return yashraj.query.get(user_id)
+
+
+# # # # # # def classify_bmi(bmi):
+# # # # # #     if bmi < 18.5:
+# # # # # #         return "Underweight"
+# # # # # #     if bmi < 25:
+# # # # # #         return "Healthy"
+# # # # # #     if bmi < 30:
+# # # # # #         return "Overweight"
+# # # # # #     return "Obese"
+
+
+# # # # # # @app.route("/")
+# # # # # # def home():
+# # # # # #     return render_template("home.html")
+
+# # # # # # @app.route("/login",methods=["GET","POST"])
+# # # # # # def login():
+# # # # # #     session.permanent = True
+# # # # # #     if request.method == "POST":
+# # # # # #         email = (request.form.get("email") or "").strip().lower()
+# # # # # #         password = request.form.get("password") or ""
+
+# # # # # #         if not email or not password:
+# # # # # #             flash("Please enter both email and password.")
+# # # # # #             return redirect(url_for("login"))
+
+# # # # # #         user = yashraj.query.filter_by(email=email).first()
+
+# # # # # #         if user and user.check_password(password):
+# # # # # #             session["user_id"] = user.id
+# # # # # #             session["name"] = user.name
+# # # # # #             session["email"] = user.email
+# # # # # #             flash("Logged in successfully.")
+# # # # # #             return redirect(url_for("calculate_bmi"))
+# # # # # #         else:
+# # # # # #             flash("Invalid email or password.")
+# # # # # #             return redirect(url_for("login"))
+# # # # # #     else:
+# # # # # #         return render_template("login.html")
+    
+# # # # # # @app.route("/signup",methods=["GET","POST"])
+# # # # # # def signup():
+# # # # # #     session.permanent = True
+# # # # # #     if request.method == "POST":
+# # # # # #         name = (request.form.get("name") or "").strip()
+# # # # # #         email = (request.form.get("email") or "").strip().lower()
+# # # # # #         password = request.form.get("password") or ""
+
+# # # # # #         if len(name) < 2:
+# # # # # #             flash("Please enter a valid name.")
+# # # # # #             return redirect(url_for("signup"))
+# # # # # #         if len(email) < 5 or "@" not in email:
+# # # # # #             flash("Please enter a valid email.")
+# # # # # #             return redirect(url_for("signup"))
+# # # # # #         if len(password) < 6:
+# # # # # #             flash("Password must be at least 6 characters.")
+# # # # # #             return redirect(url_for("signup"))
+# # # # # #         if yashraj.query.filter_by(email=email).first():
+# # # # # #             flash("An account with this email already exists.")
+# # # # # #             return redirect(url_for("signup"))
+
+# # # # # #         new_user = yashraj(
+# # # # # #             name=name,
+# # # # # #             email=email,
+# # # # # #         )
+# # # # # #         new_user.password = password
+# # # # # #         try:
+# # # # # #             db.session.add(new_user)
+# # # # # #             db.session.commit()
+# # # # # #             print("user added to the database !!")
+# # # # # #         except Exception as e :
+# # # # # #             db.session.rollback()
+# # # # # #             print(e)
+# # # # # #             print("faild to add the user to the database")
+# # # # # #             flash("Could not create your account right now.")
+# # # # # #             return redirect(url_for("signup"))
+
+# # # # # #         session["user_id"] = new_user.id
+# # # # # #         session["name"] = new_user.name
+# # # # # #         session["email"] = new_user.email
+# # # # # #         flash("Account created successfully.")
+# # # # # #         return redirect(url_for("calculate_bmi"))
+# # # # # #     else :
+# # # # # #         return render_template("singnup.html")
+
+
+# # # # # # @app.route("/calculate_bmi",methods=["GET","POST"])
+# # # # # # def calculate_bmi():
+# # # # # #     user = get_logged_in_user()
+# # # # # #     if user is None:
+# # # # # #         flash("Please log in to use the BMI calculator.")
+# # # # # #         return redirect(url_for("login"))
+
+# # # # # #     bmi = None
+# # # # # #     category = None
+
+# # # # # #     if request.method == "POST":
+# # # # # #         age_raw = (request.form.get("age") or "").strip()
+# # # # # #         height_raw = (request.form.get("height") or "").strip()
+# # # # # #         weight_raw = (request.form.get("weight") or "").strip()
+# # # # # #         gender = (request.form.get("gender") or "").strip()
+
+# # # # # #         try:
+# # # # # #             age = int(age_raw)
+# # # # # #             height = int(height_raw)
+# # # # # #             weight = int(weight_raw)
+# # # # # #         except ValueError:
+# # # # # #             flash("Age, height, and weight must be numbers.")
+# # # # # #             return redirect(url_for("calculate_bmi"))
+
+# # # # # #         if age <= 0 or height <= 0 or weight <= 0:
+# # # # # #             flash("Age, height, and weight must be greater than 0.")
+# # # # # #             return redirect(url_for("calculate_bmi"))
+
+# # # # # #         if not gender:
+# # # # # #             flash("Please choose a gender.")
+# # # # # #             return redirect(url_for("calculate_bmi"))
+
+# # # # # #         bmi = round(calculate_bmi_value(height, weight), 2)
+# # # # # #         category = classify_bmi(bmi)
+
+# # # # # #         health_entry = heal(age=age, hieht=height, weight=weight, gender=gender)
+# # # # # #         try:
+# # # # # #             db.session.add(health_entry)
+# # # # # #             db.session.commit()
+# # # # # #         except Exception as e:
+# # # # # #             db.session.rollback()
+# # # # # #             print(e)
+# # # # # #             flash("BMI was calculated, but health data could not be saved.")
+
+# # # # # #     return render_template("calcal.html", user=user.name, bmi=bmi, category=category)
+
+
+# # # # # # if __name__=="__main__":
+# # # # # #     app.run(debug=True)  # now create a page taking the inputs in the heal databse and call the calculate bmi functiona and redirectr to vivew score root with the dynamic value of the respective bmi
+
+# # # # # from flask import Flask ,redirect,render_template,request,session,flash
+# # # # # from flask_sqlalchemy import SQLAlchemy
+# # # # # from datetime import timedelta
+# # # # # from datetime import datetime
+# # # # # from werkzeug.security import generate_password_hash,check_password_hash
+
+# # # # # app=Flask(__name__)
+# # # # # app.secret_key="vivekkali"
+# # # # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///yashraj.sqlite3'
+# # # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+# # # # # db=SQLAlchemy(app)
+
+# # # # # class yashraj(db.Model):
+# # # # #     id=db.Column(db.Integer,primary_key=True)
+# # # # #     name=db.Column(db.String(30),nullable=False)
+# # # # #     mobile_no=db.Column(db.String(30),nullable=False)
+# # # # #     hashed_password=db.Column(db.String(200),nullable=False)
+# # # # #     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+# # # # #     @property
+# # # # #     def password(self):
+# # # # #         raise AttributeError("something went wrong")
+# # # # #     @password.setter
+# # # # #     def password(self,password):
+# # # # #         self.hashed_password=generate_password_hash(password)
+# # # # #     def password_check(self,password):
+# # # # #         return check_password_hash(self.hashed_password,password)
+    
+# # # # # class info(db.Model):
+# # # # #     id=db.Column(db.Integer,db,primary_key=True)
+# # # # #     user_id = db.Column(db.Integer, db.ForeignKey("yashraj.id"), nullable=False)
+# # # # #     age=db.Column(db.Float, nullable=False)
+# # # # #     height=db.Column(db.Float, nullable=False)
+# # # # #     weight=db.Column(db.Float, nullable=False)
+# # # # #     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+# # # # # with app.app_context():
+# # # # #     db.create_all()
+
+# # # # # def calculate_bmi(height,weight):
+# # # # #     height_m=height/100
+# # # # #     bmi=weight/(height_m**2)
+# # # # #     return bmi
+
+# # # # # @app.route("/")
+# # # # # def home():
+# # # # #     return render_template("home.html")
+
+# # # # # if __name__=="__main__":
+# # # # #     app.run(debug=True)
+    
+
+
+        
+# # # # from flask import Flask,redirect,render_template,session,flash, request,url_for
+# # # # from flask_sqlalchemy import SQLAlchemy
+# # # # from werkzeug.security import check_password_hash,generate_password_hash
+# # # # from datetime import time,timedelta
+
+# # # # app=Flask(__name__)
+# # # # app.secret_key="vivekkkali"
+# # # # app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///mee.sqlite3'
+# # # # app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+# # # # db=SQLAlchemy(app)
+# # # # app.permanent_session_lifetime=timedelta(minutes=60)
+
+# # # # class mee(db.Model):
+# # # #     id=db.Column(db.Integer,primary_key=True)
+# # # #     name=db.Column(db.String(30),default="unknown",nullable=False)
+# # # #     mobile_no=db.Column(db.String(13),nullable=False)
+# # # #     email=db.Column(db.String(30),nullable=False)
+# # # #     hashed_password=db.Column(db.String(200),nullable=False)
+
+# # # #     @property
+# # # #     def password(self):
+# # # #         raise AttributeError("something went wrong")
+
+# # # #     @password.setter
+# # # #     def password(self,password):
+# # # #         self.hashed_password=generate_password_hash(password)
+# # # #     def cph(self,password):
+# # # #         return check_password_hash(self.hashed_password,password)
+    
+# # # # class Heathvivek(db.Model):
+# # # #     id = db.Column(db.Integer, primary_key=True) 
+# # # #     user_id = db.Column(db.Integer, db.ForeignKey('mee.id'), nullable=False)
+# # # #     age = db.Column(db.Integer, nullable=False)
+# # # #     height = db.Column(db.Integer, nullable=False)
+# # # #     weight = db.Column(db.Integer, nullable=False)
+# # # #     gender = db.Column(db.String(7), nullable=False)
+
+    
 # # # # with app.app_context():
 # # # #     db.create_all()
+# # # #     print("database created")
 
-# # # # @app.route("/",methods=["GET","POST"])
+# # # # def bmi(height,weight):
+# # # #     height_m=height/100
+# # # #     bmi=weight/(height_m**2)
+# # # #     return bmi
 
+# # # # @app.route("/")      # create login and signup page
+# # # # def home(): 
+# # # #     return render_template('home.html')
+
+# # # # @app.route("/login",methods=["GET",'POST'])
 # # # # def login():
 # # # #     session.permanent=True
 # # # #     if request.method=="POST":
-# # # #         name=request.form.get("name")
 # # # #         mobile_no=request.form.get("mobile_no")
-# # # #         session["name"]=name
+# # # #         password=request.form.get("password")
+
+# # # #         if not mobile_no or len(mobile_no)!=10:
+# # # #             return "enter a valid mobile no"
+        
+# # # #         if not password or password.strip()=="":
+# # # #             return "enter a valid password "
+        
 # # # #         session["mobile_no"]=mobile_no
 
+# # # #         user=mee.query.filter_by(mobile_no=mobile_no).first()
         
-# # # #         if len(mobile_no)==10:
-# # # #             new_user=Vivek(
-# # # #             name=name,
-# # # #             mobile_no=mobile_no
-# # # #             )
-            
-# # # #             try:
-# # # #                 db.session.add(new_user)
-# # # #                 db.session.commit()
-# # # #             except Exception as e:
-# # # #                 db.session.rollback()
-# # # #                 print(e)
-
-
-# # # #             print("user added")
-# # # #             return "<h2> logged in thank you user</h2>"
+# # # #         if user and user.cph(password):
+# # # #             flash(f"logged in successful welcome {user.name} !")
+# # # #             return redirect(url_for("calculate"))
+        
 # # # #         else:
-# # # #             flash("worng mobile_no")
-# # # #             return render_template("login.html")
+# # # #             flash("user not found !")
+# # # #             return redirect(url_for("login"))    
 # # # #     else:
+# # # #         flash("login page !!")
 # # # #         return render_template("login.html")
+    
+# # # # @app.route("/signup",methods=["GET","POST"])
+# # # # def signup():
+# # # #     session.permanent=True
+# # # #     if request.method=='POST':
+# # # #         name=request.form.get("name")    
+# # # #         mobile_no=request.form.get("mobile_no")    
+# # # #         email=request.form.get("email")  
+# # # #         password=request.form.get("password")   # validation step
 
-# # # #  flask rivision final attempt
-
-# # # from flask import Flask,redirect,session,request,render_template,url_for,flash
-# # # from flask_sqlalchemy import SQLAlchemy
-# # # from datetime import timedelta
-# # # from datetime import datetime
-
-# # # app=Flask(__name__)
-# # # app.secret_key="yashraj"
-# # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///timeexp.sqlite3'
-# # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
-# # # db=SQLAlchemy(app)
-# # # app.permanent_session_lifetime=timedelta(minutes=15)
-
-# # # class timeexp(db.Model):
-# # #     name=db.Column(db.String(30))
-# # #     mo=db.Column(db.String(30))
-# # #     adhar=db.Column(db.String(30),primary_key=True)
-# # #     created_at=db.Column(db.DateTime,default=datetime.utcnow,nullable=False)
-
-# # #     def __inti__(self,name,mo,adhar):
-# # #         self.name=name
-# # #         self.mo=mo
-# # #         self.adhar=adhar
-# # #         self.created_at=self.created_at
-
-# # # with app.app_context():
-# # #     db.create_all()
-
-# # #    # define function here if needed 
-
-
-# # # @app.route("/", methods=["GET","POST"])
-# # # def home():
-# # #     session.permanent=True
-# # #     if request.method=="POST":
-# # #         name=request.form.get("name")
-# # #         mo=request.form.get("mo")
-# # #         adhar=request.form.get("adhar")
-
-# # #         if not name or name.strip()=="":   # not name means the name is not none ?? or len(name)<3 : return "name too short "
-# # #             return "name cannot be emply"
+# # # #         if not mobile_no or len(mobile_no)!=10:
+# # # #             return "enter a valid mobile no"
         
-# # #         if not mo.isdigit() or len(mo)!=10:   # this is called as the validation 
-# # #             return "error in the mobile no "
+# # # #         if not password or password.strip()=="":
+# # # #             return "enter a valid password "
+      
+# # # #         if not email or email.strip()=='':
+# # # #             return "enter a valid email"
         
-# # #         if not adhar.isdigit() or len(adhar)!=12:
-# # #             return "error in the adhar !"
-            
-
-# # #         session["name"]=name
-# # #         session["mo"]=mo
-# # #         session["adhar"]=adhar    # protect inputs and their types and values !!
-
-# # #         new_user=timeexp(
-# # #             name=name,
-# # #             mo=mo,
-# # #             adhar=adhar
-# # #         )
+# # # #         if not name or name.strip()=="":
+# # # #             return "enter a valid name  "
         
-# # #         try:
-# # #             db.session.add(new_user)
-# # #             db.session.commit()
-# # #             print("user added in database")
-# # #         except Exception as e :
-# # #             db.session.rollback()
-# # #             print(e)
+# # # #         session["name"]=name
+# # # #         session["email"]=email
+# # # #         session["mobile_no"]=mobile_no
+ 
 
-# # #         return "user added successfully !!"
-# # #     else:
-# # #         if "name" in session:
-# # #             return "logged in already !!"
-# # #         else :
-# # #             return render_template("testing.html")
+# # # #         new_user=mee(
+# # # #             name=name,
+# # # #             mobile_no=mobile_no,
+# # # #             email=email
+
+# # # #         )
+# # # #         new_user.password=password
+# # # #         try:
+# # # #             db.session.add(new_user)
+# # # #             db.session.commit()
+# # # #             print("user added to database !")
+# # # #         except Exception as e :
+# # # #             db.session.rollback()
+# # # #             print(f'error: {e}')
+# # # #             return f'error :{e}'
+# # # #         flash("signup successful !")
+# # # #         return redirect(url_for("calculate"))
+# # # #     else:
+# # # #         flash("signup page")
+# # # #         return render_template("signup.html")
+# # # # @app.route('/calculate',methods=["GET","POST"])
+# # # # def calculate():
+# # # #     session.permanent=True
+# # # #     if request.method=="POST":
+# # # #         age=int(request.form.get("age"))
+# # # #         height=int(request.form.get("height"))
+# # # #         weight=int(request.form.get("weight"))
+# # # #         gender=request.form.get("gender")
+
+# # # #         session["age"]=age
+# # # #         session["height"]=height
+# # # #         session["weight"]=weight
+# # # #         session["gender"]=gender
+
+# # # #         resoponse=bmi(height,weight)
+# # # #         print(f'your bmi is {bmi}')
+# # # #         return render_template("response.html",name=session['name'],bmi=resoponse)
+# # # #     else:
+# # # #         return render_template("calculate.html")    # at the end of a route i.e. in the else means req is get then we user return render_template
+
+
+
         
-# # # if __name__=="__main__":
-# # #     app.run(debug=True)
 
-# #    # password hashing
-# #    #  
+
+# # # # if __name__=="__main__":
+# # # #     app.run(debug=True)   # now all the things are  working and now remaning things are to build the mains rounts for what i am building the app and quite fron end work 
+
+# # # # make a sophos login portal for vpkbiet collage
 
 # # # from flask import Flask,redirect,render_template,url_for,session,flash,request
+# # # from datetime import datetime,timedelta
 # # # from flask_sqlalchemy import SQLAlchemy
-# # # import os
-# # # from datetime import timedelta
-# # # from datetime import datetime
-# # # from werkzeug.security import generate_password_hash, check_password_hash
 
 # # # app=Flask(__name__)
-# # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///Password.sqlite3'
+# # # app.secret_key="vivekkali"
+# # # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///Sophosdb.sqlite3'
 # # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
-# # # app.permanent_session_lifetime=timedelta(minutes=60)
 # # # db=SQLAlchemy(app)
-# # # app.secret_key="yashraj"
 
-# # # class Password(db.Model):
-# # #     id = db.Column(db.Integer, primary_key=True)   # primary key is imp
-# # #     name=db.Column(db.String(30))
-# # #     password_hash=db.Column(db.String(200),nullable=False)
-
-# # #     @property
-# # #     def password(self):
-# # #         raise AttributeError ("something went wrong")
-    
-# # #     @password.setter
-# # #     def password(self,password):
-# # #         self.password_hash=generate_password_hash(password)
-
-# # #     def check_password(self,password):
-# # #         return check_password_hash(self.password_hash,password)
+# # # class Sophosdb(db.Model):
+# # #     id=db.Column(db.Integer,primary_key=True)
+# # #     username=db.Column(db.String(30),nullable=False)
+# # #     password=db.Column(db.String(30),nullable=False)
 
 # # # with app.app_context():
 # # #     db.create_all()
-    
+# # #     print("database is created succuessfully !")
+
 # # # @app.route("/",methods=["GET","POST"])
-# # # def home():
+# # # def sophos():
+# # #     session.permanent=True
 # # #     if request.method=="POST":
-# # #         name=request.form.get("name")
+# # #         username=request.form.get("username")
 # # #         password=request.form.get("password")
 
+# # #         if not username or username.strip()=="":
+# # #             return "enter a valid username"
+
 # # #         if not password or password.strip()=="":
-# # #             return "password cannot be emply or something went wrong"  # add the validation for the name also
+# # #             return "enter a valid password"
+        
+# # #         session["username"]=username
+# # #         session["password"]=password
 
-# # #         session["name"]=name   # do not store the plain password in sessions
-
-
-# # #         new_user=Password(
-# # #             name=name,
+# # #         new_user=Sophosdb(
+# # #             username=username,
 # # #             password=password
 # # #         )
 
 # # #         try:
 # # #             db.session.add(new_user)
 # # #             db.session.commit()
-# # #             print("user added to database")
+# # #             print("user added !")
 # # #         except Exception as e :
 # # #             db.session.rollback()
 # # #             print(e)
 
-# # #         return "vivek aidev/python dev"
-# # #     else :
-# # #         return render_template("password.html")
-
+# # #         return f"signed in successful thank you {username}"   # now i wont to add a featuer to add the food and the colories that we have took 
+# # #     else:
+# # #         return render_template("sophos_index.html")
     
-
-
 # # # if __name__=="__main__":
 # # #     app.run(debug=True)
- 
-
-# # # from flask import Flask, flash, redirect, render_template, url_for, session, request
-# # # from flask_sqlalchemy import SQLAlchemy
-# # # from datetime import datetime
-# # # from datetime import timedelta
-# # # from werkzeug.security import generate_password_hash, check_password_hash
-
-# # # app = Flask(__name__)
-# # # app.secret_key = "yashraj"
-# # # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///yashraj.sqlite3"
-# # # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-# # # app.permanent_session_lifetime = timedelta(minutes=60)
-# # # db = SQLAlchemy(app)
-
-
-# # # class yashraj(db.Model):
-# # #     id = db.Column(db.Integer, primary_key=True)
-# # #     name = db.Column(db.String(50), nullable=False)
-# # #     email = db.Column(db.String(50), nullable=False)
-# # #     hashed_password = db.Column(db.String(200), nullable=False)
-# # #     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
-
-# # #     @property
-# # #     def password(self):
-# # #         raise AttributeError("something went wrong !!")
-
-# # #     @password.setter
-# # #     def password(self, password):
-# # #         self.hashed_password = generate_password_hash(password)
-
-# # #     def check_password(self, password):
-# # #         return check_password_hash(self.hashed_password,password)
-
-
-# # # class heal(db.Model):
-# # #     id = db.Column(db.Integer, primary_key=True)
-# # #     age = db.Column(db.Integer, nullable=False)
-# # #     hieht = db.Column(db.Integer, nullable=False)
-# # #     weight = db.Column(db.Integer, nullable=False)
-# # #     gender = db.Column(db.String(10), nullable=False)
-
-# # # with app.app_context():
-# # #     db.create_all()
-# # #     print("database is created successfully !!")
-
-
-# # # def calculate_bmi_value(height, weight):
-# # #     height_m = height / 100
-# # #     bmi = weight / (height_m ** 2)
-# # #     return bmi
-
-
-# # # def get_logged_in_user():
-# # #     user_id = session.get("user_id")
-# # #     if not user_id:
-# # #         return None
-# # #     return yashraj.query.get(user_id)
-
-
-# # # def classify_bmi(bmi):
-# # #     if bmi < 18.5:
-# # #         return "Underweight"
-# # #     if bmi < 25:
-# # #         return "Healthy"
-# # #     if bmi < 30:
-# # #         return "Overweight"
-# # #     return "Obese"
-
-
-# # # @app.route("/")
-# # # def home():
-# # #     return render_template("home.html")
-
-# # # @app.route("/login",methods=["GET","POST"])
-# # # def login():
-# # #     session.permanent = True
-# # #     if request.method == "POST":
-# # #         email = (request.form.get("email") or "").strip().lower()
-# # #         password = request.form.get("password") or ""
-
-# # #         if not email or not password:
-# # #             flash("Please enter both email and password.")
-# # #             return redirect(url_for("login"))
-
-# # #         user = yashraj.query.filter_by(email=email).first()
-
-# # #         if user and user.check_password(password):
-# # #             session["user_id"] = user.id
-# # #             session["name"] = user.name
-# # #             session["email"] = user.email
-# # #             flash("Logged in successfully.")
-# # #             return redirect(url_for("calculate_bmi"))
-# # #         else:
-# # #             flash("Invalid email or password.")
-# # #             return redirect(url_for("login"))
-# # #     else:
-# # #         return render_template("login.html")
     
-# # # @app.route("/signup",methods=["GET","POST"])
-# # # def signup():
-# # #     session.permanent = True
-# # #     if request.method == "POST":
-# # #         name = (request.form.get("name") or "").strip()
-# # #         email = (request.form.get("email") or "").strip().lower()
-# # #         password = request.form.get("password") or ""
-
-# # #         if len(name) < 2:
-# # #             flash("Please enter a valid name.")
-# # #             return redirect(url_for("signup"))
-# # #         if len(email) < 5 or "@" not in email:
-# # #             flash("Please enter a valid email.")
-# # #             return redirect(url_for("signup"))
-# # #         if len(password) < 6:
-# # #             flash("Password must be at least 6 characters.")
-# # #             return redirect(url_for("signup"))
-# # #         if yashraj.query.filter_by(email=email).first():
-# # #             flash("An account with this email already exists.")
-# # #             return redirect(url_for("signup"))
-
-# # #         new_user = yashraj(
-# # #             name=name,
-# # #             email=email,
-# # #         )
-# # #         new_user.password = password
-# # #         try:
-# # #             db.session.add(new_user)
-# # #             db.session.commit()
-# # #             print("user added to the database !!")
-# # #         except Exception as e :
-# # #             db.session.rollback()
-# # #             print(e)
-# # #             print("faild to add the user to the database")
-# # #             flash("Could not create your account right now.")
-# # #             return redirect(url_for("signup"))
-
-# # #         session["user_id"] = new_user.id
-# # #         session["name"] = new_user.name
-# # #         session["email"] = new_user.email
-# # #         flash("Account created successfully.")
-# # #         return redirect(url_for("calculate_bmi"))
-# # #     else :
-# # #         return render_template("singnup.html")
 
 
-# # # @app.route("/calculate_bmi",methods=["GET","POST"])
-# # # def calculate_bmi():
-# # #     user = get_logged_in_user()
-# # #     if user is None:
-# # #         flash("Please log in to use the BMI calculator.")
-# # #         return redirect(url_for("login"))
+# # from flask import Flask,redirect,render_template,request,url_for,session,flash
 
-# # #     bmi = None
-# # #     category = None
-
-# # #     if request.method == "POST":
-# # #         age_raw = (request.form.get("age") or "").strip()
-# # #         height_raw = (request.form.get("height") or "").strip()
-# # #         weight_raw = (request.form.get("weight") or "").strip()
-# # #         gender = (request.form.get("gender") or "").strip()
-
-# # #         try:
-# # #             age = int(age_raw)
-# # #             height = int(height_raw)
-# # #             weight = int(weight_raw)
-# # #         except ValueError:
-# # #             flash("Age, height, and weight must be numbers.")
-# # #             return redirect(url_for("calculate_bmi"))
-
-# # #         if age <= 0 or height <= 0 or weight <= 0:
-# # #             flash("Age, height, and weight must be greater than 0.")
-# # #             return redirect(url_for("calculate_bmi"))
-
-# # #         if not gender:
-# # #             flash("Please choose a gender.")
-# # #             return redirect(url_for("calculate_bmi"))
-
-# # #         bmi = round(calculate_bmi_value(height, weight), 2)
-# # #         category = classify_bmi(bmi)
-
-# # #         health_entry = heal(age=age, hieht=height, weight=weight, gender=gender)
-# # #         try:
-# # #             db.session.add(health_entry)
-# # #             db.session.commit()
-# # #         except Exception as e:
-# # #             db.session.rollback()
-# # #             print(e)
-# # #             flash("BMI was calculated, but health data could not be saved.")
-
-# # #     return render_template("calcal.html", user=user.name, bmi=bmi, category=category)
-
-
-# # # if __name__=="__main__":
-# # #     app.run(debug=True)  # now create a page taking the inputs in the heal databse and call the calculate bmi functiona and redirectr to vivew score root with the dynamic value of the respective bmi
-
-# # from flask import Flask ,redirect,render_template,request,session,flash
-# # from flask_sqlalchemy import SQLAlchemy
-# # from datetime import timedelta
-# # from datetime import datetime
-# # from werkzeug.security import generate_password_hash,check_password_hash
-
-# # app=Flask(__name__)
-# # app.secret_key="vivekkali"
-# # app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///yashraj.sqlite3'
-# # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
-# # db=SQLAlchemy(app)
-
-# # class yashraj(db.Model):
-# #     id=db.Column(db.Integer,primary_key=True)
-# #     name=db.Column(db.String(30),nullable=False)
-# #     mobile_no=db.Column(db.String(30),nullable=False)
-# #     hashed_password=db.Column(db.String(200),nullable=False)
-# #     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
-# #     @property
-# #     def password(self):
-# #         raise AttributeError("something went wrong")
-# #     @password.setter
-# #     def password(self,password):
-# #         self.hashed_password=generate_password_hash(password)
-# #     def password_check(self,password):
-# #         return check_password_hash(self.hashed_password,password)
-    
-# # class info(db.Model):
-# #     id=db.Column(db.Integer,db,primary_key=True)
-# #     user_id = db.Column(db.Integer, db.ForeignKey("yashraj.id"), nullable=False)
-# #     age=db.Column(db.Float, nullable=False)
-# #     height=db.Column(db.Float, nullable=False)
-# #     weight=db.Column(db.Float, nullable=False)
-# #     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
-# # with app.app_context():
-# #     db.create_all()
-
-# # def calculate_bmi(height,weight):
-# #     height_m=height/100
-# #     bmi=weight/(height_m**2)
-# #     return bmi
-
-# # @app.route("/")
+# # app=Flask(__name__)  # i have done the rivision of the flask thank you now i am going to sleep !
+# # def score_kali(sugar):
+# #     score=0
+# #     if 10<sugar<20:
+# #         score=100
+# #     else:
+# #         score=100-abs(20-sugar)
+# #     return score
+# # @app.route("/",methods=["GET","POST"])
 # # def home():
-# #     return render_template("home.html")
+# #     if request.method=="POST":
+# #         sugar=int(request.form.get("sugar"))
+# #         rep=score_kali(sugar)
+# #         return f'your score is{rep}'
+# #     else:
+# #         return render_template("vivek.html")
 
 # # if __name__=="__main__":
 # #     app.run(debug=True)
+
     
 
-
-        
-# from flask import Flask,redirect,render_template,session,flash, request,url_for
+# from flask import Flask,redirect,render_template,request,session,flash
 # from flask_sqlalchemy import SQLAlchemy
-# from werkzeug.security import check_password_hash,generate_password_hash
-# from datetime import time,timedelta
 
-# app=Flask(__name__)
-# app.secret_key="vivekkkali"
-# app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///mee.sqlite3'
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
-# db=SQLAlchemy(app)
-# app.permanent_session_lifetime=timedelta(minutes=60)
-
-# class mee(db.Model):
-#     id=db.Column(db.Integer,primary_key=True)
-#     name=db.Column(db.String(30),default="unknown",nullable=False)
-#     mobile_no=db.Column(db.String(13),nullable=False)
-#     email=db.Column(db.String(30),nullable=False)
-#     hashed_password=db.Column(db.String(200),nullable=False)
-
-#     @property
-#     def password(self):
-#         raise AttributeError("something went wrong")
-
-#     @password.setter
-#     def password(self,password):
-#         self.hashed_password=generate_password_hash(password)
-#     def cph(self,password):
-#         return check_password_hash(self.hashed_password,password)
-    
-# class Heathvivek(db.Model):
-#     id = db.Column(db.Integer, primary_key=True) 
-#     user_id = db.Column(db.Integer, db.ForeignKey('mee.id'), nullable=False)
-#     age = db.Column(db.Integer, nullable=False)
-#     height = db.Column(db.Integer, nullable=False)
-#     weight = db.Column(db.Integer, nullable=False)
-#     gender = db.Column(db.String(7), nullable=False)
-
-    
-# with app.app_context():
-#     db.create_all()
-#     print("database created")
-
-# def bmi(height,weight):
+# def bmi_vivek(height,weight):
 #     height_m=height/100
-#     bmi=weight/(height_m**2)
+#     bmi=weight/(height**2)
 #     return bmi
 
-# @app.route("/")      # create login and signup page
-# def home(): 
-#     return render_template('home.html')
-
-# @app.route("/login",methods=["GET",'POST'])
-# def login():
-#     session.permanent=True
-#     if request.method=="POST":
-#         mobile_no=request.form.get("mobile_no")
-#         password=request.form.get("password")
-
-#         if not mobile_no or len(mobile_no)!=10:
-#             return "enter a valid mobile no"
-        
-#         if not password or password.strip()=="":
-#             return "enter a valid password "
-        
-#         session["mobile_no"]=mobile_no
-
-#         user=mee.query.filter_by(mobile_no=mobile_no).first()
-        
-#         if user and user.cph(password):
-#             flash(f"logged in successful welcome {user.name} !")
-#             return redirect(url_for("calculate"))
-        
-#         else:
-#             flash("user not found !")
-#             return redirect(url_for("login"))    
-#     else:
-#         flash("login page !!")
-#         return render_template("login.html")
-    
-# @app.route("/signup",methods=["GET","POST"])
-# def signup():
-#     session.permanent=True
+# app=Flask(__name__)          # this is how real backend workss ~ vivek kumbhar love you all (spidey)
+# app.secret_key='vivekkali'
+  
+# @app.route("/",methods=['GET','POST'])
+# def home():
 #     if request.method=='POST':
-#         name=request.form.get("name")    
-#         mobile_no=request.form.get("mobile_no")    
-#         email=request.form.get("email")  
-#         password=request.form.get("password")   # validation step
-
-#         if not mobile_no or len(mobile_no)!=10:
-#             return "enter a valid mobile no"
-        
-#         if not password or password.strip()=="":
-#             return "enter a valid password "
-      
-#         if not email or email.strip()=='':
-#             return "enter a valid email"
-        
-#         if not name or name.strip()=="":
-#             return "enter a valid name  "
-        
-#         session["name"]=name
-#         session["email"]=email
-#         session["mobile_no"]=mobile_no
- 
-
-#         new_user=mee(
-#             name=name,
-#             mobile_no=mobile_no,
-#             email=email
-
-#         )
-#         new_user.password=password
-#         try:
-#             db.session.add(new_user)
-#             db.session.commit()
-#             print("user added to database !")
-#         except Exception as e :
-#             db.session.rollback()
-#             print(f'error: {e}')
-#             return f'error :{e}'
-#         flash("signup successful !")
-#         return redirect(url_for("calculate"))
-#     else:
-#         flash("signup page")
-#         return render_template("signup.html")
-# @app.route('/calculate',methods=["GET","POST"])
-# def calculate():
-#     session.permanent=True
-#     if request.method=="POST":
-#         age=int(request.form.get("age"))
 #         height=int(request.form.get("height"))
 #         weight=int(request.form.get("weight"))
-#         gender=request.form.get("gender")
-
-#         session["age"]=age
-#         session["height"]=height
-#         session["weight"]=weight
-#         session["gender"]=gender
-
-#         resoponse=bmi(height,weight)
-#         print(f'your bmi is {bmi}')
-#         return render_template("response.html",name=session['name'],bmi=resoponse)
+#         rep=bmi_vivek(height,weight)
+#         session['rep']=rep
+#         return f'your bmi score is {rep}'
 #     else:
-#         return render_template("calculate.html")    # at the end of a route i.e. in the else means req is get then we user return render_template
-
-
+#         return render_template("index.html")
 
         
-
-
 # if __name__=="__main__":
-#     app.run(debug=True)   # now all the things are  working and now remaning things are to build the mains rounts for what i am building the app and quite fron end work 
+#     app.run(debug=True)
 
-# make a sophos login portal for vpkbiet collage
-
-from flask import Flask,redirect,render_template,url_for,session,flash,request
-from datetime import datetime,timedelta
+    
+from flask import Flask,redirect,render_template,request,session,url_for
 from flask_sqlalchemy import SQLAlchemy
+from datetime import timedelta,datetime
 
 app=Flask(__name__)
-app.secret_key="vivekkali"
-app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///Sophosdb.sqlite3'
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+app.secret_key="vivekkail"
+app.config['SQLALCHEMY_DATABASE_URI']="sqlite:///dada.sqlite3"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+app.permanent_session_lifetime=timedelta(minutes=60)
 db=SQLAlchemy(app)
 
-class Sophosdb(db.Model):
+def string_validator(string):
+    if not string or string.strip()=="":
+        return f"enter a valid {string}"
+ 
+class dada(db.Model):
     id=db.Column(db.Integer,primary_key=True)
-    username=db.Column(db.String(30),nullable=False)
-    password=db.Column(db.String(30),nullable=False)
-
+    name=db.Column(db.String(30),nullable=False)
+    password=db.Column(db.String(50),nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 with app.app_context():
     db.create_all()
-    print("database is created succuessfully !")
+    print("database is created !")
 
-@app.route("/",methods=["GET","POST"])
-def sophos():
+@app.route("/",methods=['GET','POST'])
+def home():
     session.permanent=True
-    if request.method=="POST":
-        username=request.form.get("username")
+    if request.method=='POST':
+        name=request.form.get("name")
         password=request.form.get("password")
 
-        if not username or username.strip()=="":
-            return "enter a valid username"
+        res=string_validator(name)
+        res=string_validator(password)
 
-        if not password or password.strip()=="":
-            return "enter a valid password"
-        
-        session["username"]=username
-        session["password"]=password
-
-        new_user=Sophosdb(
-            username=username,
+        new_user=dada(
+            name=name,
             password=password
         )
 
         try:
             db.session.add(new_user)
             db.session.commit()
-            print("user added !")
+            print("User added to database !")
         except Exception as e :
             db.session.rollback()
             print(e)
-
-        return f"signed in successful thank you {username}"   # now i wont to add a featuer to add the food and the colories that we have took 
+        
+        return "connected succesfully ! "
+    
     else:
         return render_template("sophos_index.html")
-    
 
 
 
-
-    
-
-
-
-    

@@ -1482,5 +1482,65 @@ def home():
     else:
         return render_template("sophos_index.html")
 
+# from flask import Flask,render_template,redirect,url_for,session,request
+# from flask_sqlalchemy import SQLAlchemy
+# import joblib
 
+# model=joblib.load("housepricepredictmodel.pkl")
+# scaler=joblib.load("scaler.pkl")
+# app=Flask(__name__)
+# app.secret_key='vivekkali'
+# app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///housepricedb.sqlite3"
+# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False  # when flask create uri the it immidiatedly looks for object so db=SQLAlcehmy(app) is after the uri
+# db=SQLAlchemy(app)
+
+# class housepricedb(db.Model):
+#     name=db.Column(db.String(30),nullable=False)
+#     id=db.Column(db.Integer,primary_key=True,nullable=False)
+#     mobile_no=db.Column(db.Integer,nullable=False)
+#     email=db.Column(db.String(100),nullable=False)
+#     password=db.Column(db.String(20),nullable=False)  # here focus on attribute error ex; string / String
+#     predicted_houseprice=db.Column(db.Integer)
+    
+# with app.app_context():
+#     db.create_all()
+
+
+# @app.route('/vivek')
+# def home():
+#     return render_template("index.html")
+
+# # @app.route('/resister',methods=['GET','POST'])
+# # def resister():
+# #     if request.method=='POST':
+# #         name=request.form.get("name")
+# #         name=request.form.get("name")
+# #         name=request.form.get("name")
+# #         name=request.form.get("name")
+
+
+# if __name__=="__main__":
+#     app.run(debug=True)
+
+# from flask import Flask,render_template,redirect,url_for,session
+
+# app=Flask(__name__)
+
+# @app.route('/')
+# def home():
+#     return render_template('index.html')
+
+# if __name__=='__main__':
+#     app.run(debug=True)
+
+from flask import Flask
+
+app=Flask(__name__)
+
+@app.route('/')
+def home():
+    return 'welcome spidey'
+
+if __name__=='__main__':
+    app.run()
 

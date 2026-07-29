@@ -1,0 +1,64 @@
+from flask import Flask,render_template,redirect,url_for,session,request
+from flask_sqlalchemy import SQLAlchemy
+from datetime import timedelta,datetime
+
+app=Flask(__name__)
+app.secret_key='vivekali'
+app.permanent_session_lifetime=timedelta(days=1)
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///vivek.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+db=SQLAlchemy(app)
+
+class vivek(db.Model):
+    name=db.Column(db.String(30),nullable=False)
+    id=db.Column(db.Integer,primary_key=True)
+    mobile_no=db.Column(db.String(13),nullable=False)
+    aadhar_no=db.Column(db.String(12),nullable=False)
+    acc_created_at=db.Column(db.DateTime(),default=datetime.utcnow,nullable=False)
+
+with app.app_context():
+    db.create_all()
+    print('database is created')
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/login',methods=['GET','POST'])
+def resister():
+    if request.method=='POST':
+        name=request.form.get('name')
+        mobile_no=request.form.get('mobile_no')
+        aadhar_no=request.form.get('aadhar_no')
+
+        if len(aadhar_no)!=12 or aadhar_no.strip()=='':
+            return 'enter valid aadhar'
+
+        if len(mobile_no) !=10 or mobile_no.strip()=='':
+            return 'enter valid mobile no'
+
+        if len(name)<2 or name.strip()=='':
+            return 'enter valid name' 
+
+        new_user=vivek(
+            name=name,
+            mobile_no=mobile_no,
+            aadhar_no=aadhar_no
+        )
+
+        try:
+            db.session.add(new_user)
+            db.session.commit()
+            print('user added to the database')
+            return 'user resisterd thank you'
+        except Exception as e:
+            db.session.rollback()
+            print(e)
+            return 'something went wrong'
+    else:
+        return render_template('login.html')
+
+
+
+if __name__=='__main__':
+    app.run(debug=True)

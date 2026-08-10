@@ -1,0 +1,87 @@
+# from flask import Flask,render_template,redirect,url_for,session,request
+# from flask_sqlalchemy import SQLAlchemy
+# from datetime import timedelta,datetime  # this is flask web app  for UNIHack hackathon 
+# import os
+# from werkzeug.utils import secure_filename
+
+# app=Flask(__name__)
+# app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///vivekkali.sqlite3'
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+# db=SQLAlchemy(app)
+
+# uploads=os.path.join(app.instance_path,'instance')  # image upload
+# app.config['uploads']=uploads
+# os.makedirs(uploads,exist_ok=True)
+
+
+# class simpledb(db.Model):
+#     id=db.Column(db.Integer,primary_key=True)
+#     name=db.Column(db.String(30),nullable=False)  # database
+#     image_path=db.Column(db.String(300))
+#     stored_time=db.Column(db.DateTime,default=datetime.utcnow,nullable=False)
+
+# with app.app_context():
+#     db.create_all()
+#     print('database is created !!')
+
+# @app.route('/',methods=['GET','POST'])
+# def home():
+#     if request.method=='POST':
+#         name=request.form.get('name')
+#         image=request.files.get('image')
+
+#         image_path=None # initiate image
+        
+#         if image and image.filename !='':
+#             filename=secure_filename(image.filename)
+#             image.save(
+#                 os.path.join(app.config['uploads'],filename)
+#             )
+
+#         #storing image in database
+#         image_path=os.path.join('uploads',filename)
+
+#         new_user=simpledb(
+#             name=name,
+#             image_path=image_path
+#         )
+
+#         try:
+#             db.session.add(new_user)
+#             db.session.commit()
+#             print('user added in database')
+#             return 'alldone added in database'
+#         except Exception as e:
+#             db.session.rollback()
+#             print(e)
+
+#             return 'something went wrong'
+#     else:
+#         return render_template('index.html')
+
+
+ 
+        
+# if __name__=='__main__':
+#     app.run()
+
+
+from flask import Flask,render_template,request
+app=Flask(__name__)
+
+@app.route('/',methods=['GET','POST'])
+def home():
+    if request.method=='POST':
+        name=request.form.get('name')
+
+        if len(name)<2 or name.strip()=="":
+            return 'enter valid name'
+
+        return 'okay well done'
+
+    else:
+        return render_template('index.html')
+
+
+if __name__=='__main__':
+    app.run(debug=True)

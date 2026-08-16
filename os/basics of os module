@@ -1,0 +1,31 @@
+# import os
+# # print(os.getcwd())
+# # os.makedirs('python_practice',exist_ok=True)
+# # os.makedirs('python_practice/data',exist_ok=True)
+# # os.makedirs('python_practice/images',exist_ok=True)
+# # os.makedirs('python_practice/documents',exist_ok=True)
+
+# # a=os.path.exists('data')
+# # if a :
+# #     print('yes')
+# # else:
+# #     print('no')
+
+# abs_path=os.path.abspath('documents')
+# dir=os.path.dirname(abs_path)
+# print(dir)
+
+# # import os
+# # # print(os.getcwd())
+# # # os.path.join('')
+# # # print(os.getcwd())
+# # os.makedirs('vivekos',exist_ok=True)
+# # os.makedirs('myproject/data',exist_ok=True)
+# # os.makedirs('myproject/images')
+# # os.makedirs('myproject/docs')
+
+
+# import os
+path=os.path.join('Desktop','vivekos')
+path=os.path.abspath(path)
+os.makedirs(path,exist_ok=True)

@@ -29,3 +29,7 @@
 path=os.path.join('Desktop','vivekos')
 path=os.path.abspath(path)
 os.makedirs(path,exist_ok=True)
+
+
+
+# to work on the os.path.join and many more things including autoation   ~ spyder

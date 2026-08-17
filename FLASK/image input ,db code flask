@@ -1,0 +1,65 @@
+from flask import Flask,render_template,redirect,request,url_for
+from flask_sqlalchemy import SQLAlchemy
+from datetime import timedelta,datetime
+import os
+from werkzeug.utils import secure_filename
+
+app=Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///testos.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+upload_folder=os.path.join(app.instance_path,'uploads')
+app.config['upload_folder']=upload_folder
+db=SQLAlchemy(app=app)
+
+class Tryos(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    name=db.Column(db.String(30),nullable=False)
+    image_path=db.Column(db.String(200),nullable=False)
+    created_At=db.Column(db.DateTime,default=datetime.utcnow,nullable=False)
+
+with app.app_context():
+    db.create_all()
+    print('database is created')
+
+@app.route('/',methods=['GET','POST'])
+def home():
+    if request.method=="POST":
+        name=request.form.get('name')
+        image=request.files.get('image')
+
+        if name.strip()=="" or not name or len(name)<2:
+            return 'enter valid name'
+
+        image_path=None
+
+
+        if image and image.filename !='':
+
+            filename=secure_filename(image.filename)
+
+            image.save(
+                os.path.join('instance','uploads',filename)  # here dont use
+            )
+        rel_path=os.path.join('instance','uploads',filename)
+        image_path=os.path.abspath(rel_path)
+
+        new_user=Tryos(
+            name=name,
+            image_path=image_path
+        )
+        try:
+            db.session.add(new_user)
+            db.session.commit()
+            print('user added the database')
+
+        except Exception as e :
+            db.session.rollback()
+            print('something went wrong !')
+
+        return 'all done bro !!! you got added in database'
+    else:
+        return render_template('index.html')
+
+if __name__=='__main__':
+    app.run(debug=True)
+

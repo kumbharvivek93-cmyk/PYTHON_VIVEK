@@ -1,0 +1,4 @@
+        try:
+            DOB = datetime.strptime(DOB, '%Y-%m-%d').date()
+        except (ValueError, TypeError):
+            return 'Enter a valid date of birth'
